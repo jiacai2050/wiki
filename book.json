@@ -1,0 +1,19 @@
+{
+  "title": "家财的个人 Wiki",
+  "links": {
+    "sidebar": {
+      "Blog": "http://liujiacai.net"
+    }
+  },
+  "plugins": [
+    "-sharing",
+    "-livereload",
+    "-expandable-chapters-small",
+    "expandable-chapters"
+  ],
+  "pluginsConfig": {
+    "fontSettings": {
+      "size": 1
+    }
+  }
+}
