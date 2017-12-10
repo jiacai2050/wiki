@@ -22,6 +22,7 @@
     * [图片处理](mac/picture.md)
     * [音乐，视频](mac/music_video.md)
     * [Kindle](mac/kindle.md)
+    * [压缩软件](mac/compression.md)
     * [FAQ](mac/faq.md)
 
 -----
