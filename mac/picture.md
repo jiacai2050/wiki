@@ -1,5 +1,8 @@
-### 图片截屏、合并
+## 截屏
 
+```
+brew cask install snip
+```
 Mac上的截图工具已经很好了，`Cmd + Shift + 3/4`就够用了，但是如果想在图片上写些文字，马赛克某部分，就不行了，推荐用 Snip，才 2M 大小，虽说是腾讯开发的，但是不流氓。可以设置快捷键，我设定的是`Cmd + Shift + 6`。
 更重要的一点是，[Snip](http://snip.qq.com/) 可以解决Retina下截屏2x问题（就是截出来的图超大），就光这个特点就足以让你使用snip。
 <center>
@@ -10,7 +13,17 @@ Mac自带的 Preview 可以对图片进行旋转、调整大小、添加文字�
 <img src="http://img01.taobaocdn.com/imgextra/i1/581166664/TB2KtMobFXXXXXkXpXXXXXXXXXX_!!581166664.png" alt="Preview工具栏"/>
 </center>
 
-此外，如果要对两张图片进行合并，需要通过安装 [ImageMagick](https://www.imagemagick.org)，并且通过以下命令操作：[出处](http://apple.stackexchange.com/a/52882/103966)
+## 马赛克 
+
+[圈点](https://www.yinxiang.com/skitch/)洋名 Skitch，出自 Evernote，可以方便打马赛克，加标注。
+```
+brew cask install skitch
+```
+
+
+## 图片合并
+
+Mac 版的 PS [ImageMagick](https://www.imagemagick.org)，[常用命令](http://apple.stackexchange.com/a/52882/103966)：
 
 ```
 brew install ImageMagick
@@ -21,9 +34,8 @@ convert +append left.png right.png merged.png
 montage -geometry 100% left.jpg right.jpg merged.jpg
 ```
 
-如果你依赖于Evernote，可以试试[圈点](https://www.yinxiang.com/skitch/)，洋名skitch，同样很好很强大。
 
-### 录屏 gif
+## 录屏 gif
 ```
 # 安装命令
 brew cask install licecap
@@ -33,7 +45,7 @@ brew cask install licecap
 
 ![使用 licecap 制作的例子](http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif)
 
-### 流程图制作工具
+## 流程图制作工具
 
 对于程序员来说，流程图应该是再亲切不过的了，一张图胜过千言万语。之前我都是用 Keynote 来画，但是实在是不好用，<del>后来在[知乎](https://www.zhihu.com/question/19588698)上发现了在线版的[ProcessOn](https://www.processon.com/)，大大减少了我画流程图的时间，上手也比较快。</del>现在 ProcessOn 有了限制，只能保留 9 张流程图。我又找到了新的工具，[draw.io](https://www.draw.io)，时序图、状态图统统不在话下。
 

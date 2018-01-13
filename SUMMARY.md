@@ -3,10 +3,12 @@
 * [Introduction](README.md)
 
 -----
-* [MacBook](mac/README.md)
+* [Mac OSX](mac/README.md)
     * [终端](mac/iterm2.md)
     * [SSH](mac/ssh.md)
-    * [文本编辑器](mac/editor.md)
+    * 编辑器
+        * [Sublime](mac/editor/sublime.md)
+        * [Emacs](mac/editor/emacs.md)
     * 编程语言与IDE
         * [Java](mac/pl_ide/java.md)
         * [Clojure](mac/pl_ide/clojure.md)
