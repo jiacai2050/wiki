@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Hbase · 家财的个人 Wiki</title>
+        <title>Kafka · 家财的个人 Wiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="hive.html" />
+    <link rel="next" href="kestrel.html" />
     
     
 
@@ -663,9 +663,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="7.1.1" data-path="../queue/kafka.html">
+        <li class="chapter active" data-level="7.1.1" data-path="kafka.html">
             
-                <a href="../queue/kafka.html">
+                <a href="kafka.html">
             
                     
                     Kafka
@@ -676,9 +676,9 @@
             
         </li>
     
-        <li class="chapter " data-level="7.1.2" data-path="../queue/kestrel.html">
+        <li class="chapter " data-level="7.1.2" data-path="kestrel.html">
             
-                <a href="../queue/kestrel.html">
+                <a href="kestrel.html">
             
                     
                     Kestrel
@@ -715,9 +715,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="8.1.1" data-path="hbase.html">
+        <li class="chapter " data-level="8.1.1" data-path="../hadoop/hbase.html">
             
-                <a href="hbase.html">
+                <a href="../hadoop/hbase.html">
             
                     
                     Hbase
@@ -728,9 +728,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.1.2" data-path="hive.html">
+        <li class="chapter " data-level="8.1.2" data-path="../hadoop/hive.html">
             
-                <a href="hive.html">
+                <a href="../hadoop/hive.html">
             
                     
                     Hive
@@ -741,9 +741,9 @@
             
         </li>
     
-        <li class="chapter " data-level="8.1.3" data-path="hdfs.html">
+        <li class="chapter " data-level="8.1.3" data-path="../hadoop/hdfs.html">
             
-                <a href="hdfs.html">
+                <a href="../hadoop/hdfs.html">
             
                     
                     HDFS
@@ -789,7 +789,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Hbase</a>
+        <a href=".." >Kafka</a>
     </h1>
 </div>
 
@@ -804,33 +804,55 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="hbase">Hbase</h1>
-<p>standalone &#x65B9;&#x5F0F;&#x542F;&#x52A8;&#x7684; hbase &#x81EA;&#x5E26; zk&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x4E0E;&#x5176;&#x4ED6;&#x670D;&#x52A1;&#x5171;&#x7528; zk&#xFF0C;&#x90A3;&#x4E48;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4F2A;&#x5206;&#x5E03;&#x5F0F;&#x3002;&#x4E3B;&#x8981;&#x6709;&#x4EE5;&#x4E0B;&#x914D;&#x7F6E;&#xFF1A;</p>
+                                <h1 id="kafka">Kafka</h1>
 <ul>
-<li>hbase-site.xml<pre><code>&lt;configuration&gt;
- &lt;property&gt;
-  &lt;name&gt;hbase.rootdir&lt;/name&gt;
-  &lt;value&gt;file:///opt/hbase&lt;/value&gt;
-&lt;/property&gt;
-  &lt;property&gt;
-  &lt;name&gt;hbase.cluster.distributed&lt;/name&gt;
-  &lt;value&gt;true&lt;/value&gt;
-&lt;/property&gt;
-&lt;property&gt;
-  &lt;name&gt;hbase.zookeeper.quorum&lt;/name&gt;
-  &lt;value&gt;localhost&lt;/value&gt;
-&lt;/property&gt;
-&lt;/configuration&gt;
-</code></pre></li>
-<li>hbase-env.sh<pre><code>export HBASE_MANAGES_ZK=false
-</code></pre></li>
+<li><a href="https://kafka.apache.org/quickstart" target="_blank">https://kafka.apache.org/quickstart</a></li>
 </ul>
-<p>&#x4E4B;&#x540E;&#x518D; bin/start-hbase.sh &#x542F;&#x52A8;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
-<h2 id="cdh-&#x56FD;&#x5185;&#x4EE3;&#x7406;">CDH &#x56FD;&#x5185;&#x4EE3;&#x7406;</h2>
-<ul>
-<li><a href="http://cloudera.proxy.ustclug.org/cdh5/cdh/5/" target="_blank">http://cloudera.proxy.ustclug.org/cdh5/cdh/5/</a></li>
-</ul>
+<pre><code># &#x63CF;&#x8FF0;&#x4E00;&#x4E2A; topic
+bin/kafka-topics.sh --zookeeper localhost:2181 --describe  --topic test
 
+# &#x521B;&#x5EFA; topic
+bin/kafka-topics.sh --zookeeper localhost:2181 --create --replication-factor 1 --partitions 3 --topic test
+
+# &#x67E5;&#x770B;&#x6240;&#x6709; topic
+bin/kafka-topics.sh --list --zookeeper localhost:2181
+
+# &#x5220;&#x9664; topic
+bin/kafka-topics.sh --zookeeper localhost:2181 --delete --topic test
+
+# &#x53D1;&#x6D88;&#x606F;
+bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+# &#x6536;&#x6D88;&#x606F;
+bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+</code></pre><p>&#x5728; 0.9.0 &#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;group &#x7684; offset &#x5B58;&#x5728; zk &#x4E2D;&#xFF0C;&#x4E4B;&#x540E;&#x7684;&#x7248;&#x672C;&#x653E;&#x5728; broker &#x4E2D;&#x3002;</p>
+<pre><code># &#x67E5;&#x770B;&#x6240;&#x6709; groupID
+bin/kafka-consumer-groups.sh  -zookeeper localhost:2181 -list        # Old consumers
+bin/kafka-consumer-groups.sh  -bootstrap-server localhost:9092 -list # New consumers
+
+# &#x9664;&#x4E86; list &#x5916;&#xFF0C;&#x8FD8;&#x6709; --describe --reset-offsets --delete
+</code></pre><ul>
+<li><a href="http://pavelmakhov.com/2017/03/useful-kafka-commands" target="_blank">http://pavelmakhov.com/2017/03/useful-kafka-commands</a></li>
+<li><a href="https://dzone.com/articles/kafka-architecture-log-compaction" target="_blank">https://dzone.com/articles/kafka-architecture-log-compaction</a></li>
+</ul>
+<h2 id="&#x914D;&#x7F6E;">&#x914D;&#x7F6E;</h2>
+<p>server</p>
+<pre><code>delete.topic.enable=true  # &#x5141;&#x8BB8;&#x7269;&#x7406;&#x5220;&#x9664;
+log.dirs=/opt/kafka-logs
+
+# The maximum size of the log before deleting it
+log.retention.bytes
+#  The number of hours to keep a log file before deleting it
+log.retention.hours
+</code></pre><h3 id="topic-level-configs">Topic-Level Configs</h3>
+<ul>
+<li><a href="https://kafka.apache.org/documentation/#topicconfigs" target="_blank">https://kafka.apache.org/documentation/#topicconfigs</a></li>
+</ul>
+<pre><code># &#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;
+bin/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name test --alter --add-config x=y
+# &#x5220;&#x9664;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;
+bin/kafka-configs.sh --zookeeper localhost:2181 --entity-type topics --entity-name my_topic_name --alter --delete-config x
+</code></pre>
                                 
                                 </section>
                             
@@ -858,7 +880,7 @@
             
                 
                 
-                <a href="hive.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Hive">
+                <a href="kestrel.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Kestrel">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -869,7 +891,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Hbase","level":"8.1.1","depth":2,"next":{"title":"Hive","level":"8.1.2","depth":2,"path":"hadoop/hive.md","ref":"hadoop/hive.md","articles":[]},"previous":{"title":"Hadoop","level":"8.1","depth":1,"ref":"","articles":[{"title":"Hbase","level":"8.1.1","depth":2,"path":"hadoop/hbase.md","ref":"hadoop/hbase.md","articles":[]},{"title":"Hive","level":"8.1.2","depth":2,"path":"hadoop/hive.md","ref":"hadoop/hive.md","articles":[]},{"title":"HDFS","level":"8.1.3","depth":2,"path":"hadoop/hdfs.md","ref":"hadoop/hdfs.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs.html#fig2.1.3.2.1","level":"2.1.3.2","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.2.1"},{"backlink":"mac/editor/emacs.html#fig2.1.3.2.2","level":"2.1.3.2","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.2.2"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":5,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":6,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"clojure/re-frame.html#fig3.1.1.1","level":"3.1.1","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":7,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.1.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"hadoop/hbase.md","mtime":"2018-01-15T10:11:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-29T14:44:34.234Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Kafka","level":"7.1.1","depth":2,"next":{"title":"Kestrel","level":"7.1.2","depth":2,"path":"queue/kestrel.md","ref":"queue/kestrel.md","articles":[]},"previous":{"title":"Queue","level":"7.1","depth":1,"ref":"","articles":[{"title":"Kafka","level":"7.1.1","depth":2,"path":"queue/kafka.md","ref":"queue/kafka.md","articles":[]},{"title":"Kestrel","level":"7.1.2","depth":2,"path":"queue/kestrel.md","ref":"queue/kestrel.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs.html#fig2.1.3.2.1","level":"2.1.3.2","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.2.1"},{"backlink":"mac/editor/emacs.html#fig2.1.3.2.2","level":"2.1.3.2","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.2.2"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":5,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":6,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"clojure/re-frame.html#fig3.1.1.1","level":"3.1.1","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":7,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.1.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"queue/kafka.md","mtime":"2018-01-29T14:43:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-29T14:44:34.234Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
