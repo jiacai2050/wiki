@@ -19,6 +19,7 @@
     * [虚拟机](mac/virtualmachine/virtualbox.md)
         * [Vagrant](mac/virtualmachine/vagrant.md)
         * [Docker](mac/virtualmachine/docker.md)
+    * [数据库 GUI](mac/db_gui.md)
     * [抓包工具](mac/wireshark.md)
     * [浏览器](mac/browser.md)
     * [图片处理](mac/picture.md)
@@ -30,6 +31,25 @@
 -----
 * Clojure
     * [Re-frame](clojure/re-frame.md)
+    * [figwheel](clojure/figwheel.md)
+
+-----
+* Java
+    * [Hystrix](java/hystrix.md)
+
+-----
+* Ubuntu
+    * [apt-get](ubuntu/apt-get.md)
+    * [Emacs](ubuntu/emacs.md)
+
+-----
+* DB
+    * [Mongodb](db/mongo.md)
+
+-----
+* Queue
+    * [Kafka](queue/kafka.md)
+    * [Kestrel](queue/kestrel.md)
 
 -----
 * Hadoop

@@ -49,4 +49,9 @@ brew cask install licecap
 
 对于程序员来说，流程图应该是再亲切不过的了，一张图胜过千言万语。之前我都是用 Keynote 来画，但是实在是不好用，<del>后来在[知乎](https://www.zhihu.com/question/19588698)上发现了在线版的[ProcessOn](https://www.processon.com/)，大大减少了我画流程图的时间，上手也比较快。</del>现在 ProcessOn 有了限制，只能保留 9 张流程图。我又找到了新的工具，[draw.io](https://www.draw.io)，时序图、状态图统统不在话下。
 
-其次，国外很多项目的图是用纯文本画的，比较好用的在线工具是：[asciiflow](http://asciiflow.com/)。
+国外很多项目的图是用纯文本画的，比较好用的在线工具是：[asciiflow](http://asciiflow.com/)。
+
+其次，[Graphviz](http://www.webgraphviz.com/) 提供了编程接口，也推荐使用，他也有[网页版](http://www.webgraphviz.com/).
+```
+brew install Graphviz
+```
