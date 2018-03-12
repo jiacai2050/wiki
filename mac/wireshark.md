@@ -40,3 +40,7 @@ ip.addr == 10.43.54.65
 # is equivalent to
 ip.src == 10.43.54.65 or ip.dst == 10.43.54.65
 ```
+
+
+- [Getting a Packet Trace](https://developer.apple.com/library/content/qa/qa1176/_index.html#//apple_ref/doc/uid/DTS10001707-CH1-SECNOTES)
+- [Capture a packet trace using Terminal on your Mac](https://support.apple.com/en-us/HT202013)

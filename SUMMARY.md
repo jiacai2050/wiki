@@ -8,7 +8,8 @@
     * [SSH](mac/ssh.md)
     * 编辑器
         * [Sublime](mac/editor/sublime.md)
-        * [Emacs](mac/editor/emacs.md)
+        * [Emacs](mac/editor/emacs/README.md)
+            * [Python](mac/editor/emacs/python.md)
     * 编程语言与IDE
         * [Java](mac/pl_ide/java.md)
         * [Clojure](mac/pl_ide/clojure.md)
@@ -36,11 +37,14 @@
 -----
 * Java
     * [Hystrix](java/hystrix.md)
+    * [Jvisualvm](java/jvisualvm.md)
 
 -----
 * Ubuntu
     * [apt-get](ubuntu/apt-get.md)
     * [Emacs](ubuntu/emacs.md)
+    * [ss](ubuntu/ss.md)
+    * [sar](ubuntu/sar.md)
 
 -----
 * DB

@@ -3,7 +3,7 @@
 - https://kafka.apache.org/quickstart
 
 
-```
+```sh
 # 描述一个 topic
 bin/kafka-topics.sh --zookeeper localhost:2181 --describe  --topic test
 
@@ -26,7 +26,7 @@ bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --f
 
 在 0.9.0 之前的版本中，group 的 offset 存在 zk 中，之后的版本放在 broker 中。
 
-```
+```sh
 # 查看所有 groupID
 bin/kafka-consumer-groups.sh  -zookeeper localhost:2181 -list        # Old consumers
 bin/kafka-consumer-groups.sh  -bootstrap-server localhost:9092 -list # New consumers
@@ -39,6 +39,7 @@ bin/kafka-consumer-groups.sh  -bootstrap-server localhost:9092 -list # New consu
 ## 配置
 
 server
+
 ```
 delete.topic.enable=true  # 允许物理删除
 log.dirs=/opt/kafka-logs

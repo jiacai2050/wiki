@@ -17,3 +17,13 @@ Mac 生于乔帮主之手时，为了凸显尊贵，接口与一般的电脑有�
 3. 关闭蓝牙，Mac 中，同时打开蓝牙与 Wi-Fi 会冲突。[详情](http://apple.stackexchange.com/a/162406/103966)
 
 如果你的 Mac 也遇到了 Wi-Fi 问题，可以试试上面三个解决方法。
+
+## du 磁盘大小
+
+```
+du -sh some-directory 
+```
+
+检查的是这个目录的物理大小，一个 1K 的文件，会因 文件碎片/sector/block size 等因素，在磁盘上占用的空间一般都要大于 1K。
+
+- https://superuser.com/questions/382120/mac-os-x-not-reporting-directory-sizes-correctly
