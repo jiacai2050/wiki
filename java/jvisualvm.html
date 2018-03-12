@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>figwheel · 家财的个人 Wiki</title>
+        <title>Jvisualvm · 家财的个人 Wiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -66,7 +66,7 @@
 
     
     
-    <link rel="prev" href="re-frame.html" />
+    <link rel="prev" href="hystrix.html" />
     
 
     </head>
@@ -500,9 +500,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="3.1.1" data-path="re-frame.html">
+        <li class="chapter " data-level="3.1.1" data-path="../clojure/re-frame.html">
             
-                <a href="re-frame.html">
+                <a href="../clojure/re-frame.html">
             
                     
                     Re-frame
@@ -513,9 +513,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="3.1.2" data-path="figwheel.html">
+        <li class="chapter " data-level="3.1.2" data-path="../clojure/figwheel.html">
             
-                <a href="figwheel.html">
+                <a href="../clojure/figwheel.html">
             
                     
                     figwheel
@@ -552,9 +552,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1.1" data-path="../java/hystrix.html">
+        <li class="chapter " data-level="4.1.1" data-path="hystrix.html">
             
-                <a href="../java/hystrix.html">
+                <a href="hystrix.html">
             
                     
                     Hystrix
@@ -565,9 +565,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.1.2" data-path="../java/jvisualvm.html">
+        <li class="chapter active" data-level="4.1.2" data-path="jvisualvm.html">
             
-                <a href="../java/jvisualvm.html">
+                <a href="jvisualvm.html">
             
                     
                     Jvisualvm
@@ -847,7 +847,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >figwheel</a>
+        <a href=".." >Jvisualvm</a>
     </h1>
 </div>
 
@@ -862,44 +862,43 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="figwheel">figwheel</h1>
-<p>&#x5728; Clojure REPL &#x4E2D;&#x542F;&#x52A8; figwheel REPL </p>
-<ol>
-<li><p>&#x914D;&#x7F6E;&#x4F9D;&#x8D56;</p>
-<pre><code class="lang-clojure">(<span class="hljs-name">defproject</span> repler <span class="hljs-string">&quot;0.1.0-SNAPSHOT&quot;</span>
- ...
- <span class="hljs-symbol">:source-paths</span> [<span class="hljs-string">&quot;src&quot;</span>] 
- <span class="hljs-symbol">:profiles</span> {<span class="hljs-symbol">:dev</span> {<span class="hljs-symbol">:dependencies</span> [[com.cemerick/piggieback <span class="hljs-string">&quot;0.2.1&quot;</span>] &lt;-- Note
-                                 [figwheel-sidecar <span class="hljs-string">&quot;0.5.8&quot;</span>]]
-                  <span class="hljs-symbol">:source-paths</span> [<span class="hljs-string">&quot;cljs_src&quot;</span>] }}
- <span class="hljs-symbol">:repl-options</span> {<span class="hljs-symbol">:nrepl-middleware</span> [cemerick.piggieback/wrap-cljs-repl]} &lt;-- Note
- ...
-)
+                                <h1 id="jvisualvm">Jvisualvm</h1>
+<h2 id="&#x8FDE;&#x63A5;-remote"><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/visualvm/applications_remote.html" target="_blank">&#x8FDE;&#x63A5; remote</a></h2>
+<p>&#x5728;&#x8FDE;&#x63A5; remote &#x673A;&#x5668;&#x4E0A;&#x7684; Java &#x8FDB;&#x7A0B;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x542F;&#x52A8; jstatd &#x670D;&#x52A1;&#x3002;</p>
+<h3 id="jstatd">Jstatd</h3>
+<p>jstatd&#x662F;&#x4E00;&#x4E2A;rmi&#x7684;server&#x5E94;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x76D1;&#x63A7;jvm&#x7684;&#x521B;&#x5EFA;&#x548C;&#x7ED3;&#x675F;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x63A5;&#x53E3;&#x8BA9;&#x76D1;&#x63A7;&#x5DE5;&#x5177;&#xFF08;&#x5982;visualvm&#xFF09;&#x53EF;&#x4EE5;&#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;&#x5230;&#x672C;&#x673A;&#x7684;jvms&#x3002;&#x6CE8;&#x610F;&#x662F;jvms&#xFF0C;&#x5C31;&#x662F;&#x8BF4;&#x8FD0;&#x884C;jstatd&#x547D;&#x4EE4;&#x540E;&#x53EF;&#x4EE5;&#x7528;&#x76D1;&#x63A7;&#x5DE5;&#x5177;&#x76D1;&#x63A7;&#x672C;&#x7528;&#x6237;&#xFF08;&#x8FD0;&#x884C;jstatd&#x547D;&#x4EE4;&#x7684;&#x7528;&#x6237;&#xFF09;&#x6240;&#x6709;&#x5DF2;&#x7ECF;&#x542F;&#x52A8;&#x7684;java&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x76F4;&#x63A5;&#x8FD0;&#x884C; jstatd &#x547D;&#x4EE4;&#xFF0C;&#x4F1A;&#x62A5;&#x4E0B;&#x9762;&#x7684;&#x9519;&#x8BEF;&#xFF1A;</p>
+<pre><code class="lang-sh">[vagrant@vagrant-ubuntu-trusty-64 11:01:40 ~]
+$ jstatd
+Could not create remote object
+access denied (<span class="hljs-string">&quot;java.util.PropertyPermission&quot;</span> <span class="hljs-string">&quot;java.rmi.server.ignoreSubClasses&quot;</span> <span class="hljs-string">&quot;write&quot;</span>)
+java.security.AccessControlException: access denied (<span class="hljs-string">&quot;java.util.PropertyPermission&quot;</span> <span class="hljs-string">&quot;java.rmi.server.ignoreSubClasses&quot;</span> <span class="hljs-string">&quot;write&quot;</span>)
+        at java.security.AccessControlContext.checkPermission(AccessControlContext.java:472)
+        at java.security.AccessController.checkPermission(AccessController.java:884)
+        at java.lang.SecurityManager.checkPermission(SecurityManager.java:549)
+        at java.lang.System.setProperty(System.java:792)
+        at sun.tools.jstatd.Jstatd.main(Jstatd.java:139)
 </code></pre>
-</li>
-<li><p>&#x5207;&#x6362; REPL</p>
-<pre><code class="lang-clojure">(<span class="hljs-name"><span class="hljs-builtin-name">use</span></span> &apos;figwheel-sidecar.repl-api)
-(<span class="hljs-name">start-figwheel!</span>) <span class="hljs-comment">;; &#x8FD9;&#x91CC;&#x4E0D;&#x4F1A; merge profile&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5FC5;&#x8981;&#x53EF;&#x4EE5;&#x624B;&#x52A8;&#x8BBE;&#x7F6E;</span>
-
-(<span class="hljs-name"><span class="hljs-builtin-name">def</span></span> figwheel-config
-   {<span class="hljs-symbol">:figwheel-options</span> {} <span class="hljs-comment">;; &lt;-- figwheel server config goes here </span>
-    <span class="hljs-symbol">:build-ids</span> [<span class="hljs-string">&quot;dev&quot;</span>]   <span class="hljs-comment">;; &lt;-- a vector of build ids to start autobuilding</span>
-    <span class="hljs-symbol">:all-builds</span>          <span class="hljs-comment">;; &lt;-- supply your build configs here</span>
-      [{<span class="hljs-symbol">:id</span> <span class="hljs-string">&quot;dev&quot;</span>
-        <span class="hljs-symbol">:figwheel</span> <span class="hljs-literal">true</span>
-        <span class="hljs-symbol">:source-paths</span> [<span class="hljs-string">&quot;cljs-src&quot;</span>]
-        <span class="hljs-symbol">:compiler</span> {<span class="hljs-symbol">:main</span> <span class="hljs-string">&quot;repler.core&quot;</span>
-                   <span class="hljs-symbol">:asset-path</span> <span class="hljs-string">&quot;js/out&quot;</span>
-                   <span class="hljs-symbol">:output-to</span> <span class="hljs-string">&quot;resources/public/js/repler.js&quot;</span>
-                   <span class="hljs-symbol">:output-dir</span> <span class="hljs-string">&quot;resources/public/js/out&quot;</span> }}]})
-
-(<span class="hljs-name">start-figwheel!</span> figwheel-config)
-
-(<span class="hljs-name">cljs-repl</span>)
+<p>&#x8FD9;&#x662F;&#x7531;&#x4E8E;&#x6CA1;&#x6709;&#x6307;&#x5B9A; policy&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E0B;&#x9762;&#x7684;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#xFF1A;</p>
+<pre><code class="lang-sh">jstatd -p 1099 -J-Djava.security.policy=&lt;(<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;grant codebase &quot;file:${java.home}/../lib/tools.jar&quot; {permission java.security.AllPermission;};&apos;</span>) -J-Djava.rmi.server.hostname=192.168.33.10
 </code></pre>
-</li>
-</ol>
-<p>&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-within-NRepl" target="_blank">https://github.com/bhauman/lein-figwheel/wiki/Using-the-Figwheel-REPL-within-NRepl</a></p>
+<p>&#x503C;&#x5F97;&#x6CE8;&#x610F;&#x7684;&#x662F;&#x9700;&#x8981;&#x6307;&#x5B9A; <code>java.rmi.server.hostname</code>&#xFF0C;&#x5426;&#x5219;&#x770B;&#x4E0D;&#x5230; remote &#x673A;&#x5668;&#x4E0A;&#x7684;&#x8FDB;&#x7A0B;</p>
+<figure id="fig4.1.2.1"><img src="../images/jvisualvm.png" alt="jvisualvm"><figcaption>jvisualvm</figcaption></figure>
+<p>&#x540C;&#x7406;&#xFF0C;&#x542F;&#x52A8; jmx &#x4E5F;&#x9700;&#x8981;&#x6307;&#x5B9A;&#xFF0C;&#x53C2;&#x8003;&#xFF1A;</p>
+<pre><code class="lang-sh">JAVA_OPTS=<span class="hljs-string">&quot;<span class="hljs-variable">$JAVA_OPTS</span> -Dcom.sun.management.jmxremote.port=6789&quot;</span>
+JAVA_OPTS=<span class="hljs-string">&quot;<span class="hljs-variable">$JAVA_OPTS</span> -Dcom.sun.management.jmxremote.ssl=false&quot;</span>
+JAVA_OPTS=<span class="hljs-string">&quot;<span class="hljs-variable">$JAVA_OPTS</span> -Dcom.sun.management.jmxremote.authenticate=false&quot;</span>
+<span class="hljs-built_in">export</span> JAVA_OPTS=<span class="hljs-string">&quot;<span class="hljs-variable">$JAVA_OPTS</span> -Djava.rmi.server.hostname=192.168.33.10&quot;</span>
+
+lein repl
+</code></pre>
+<h2 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h2>
+<ul>
+<li><a href="http://clojure-goes-fast.com/blog/profiling-tool-jvisualvm/" target="_blank">http://clojure-goes-fast.com/blog/profiling-tool-jvisualvm/</a></li>
+<li><a href="https://docs.oracle.com/javase/1.5.0/docs/tooldocs/share/jstatd.html" target="_blank">https://docs.oracle.com/javase/1.5.0/docs/tooldocs/share/jstatd.html</a></li>
+<li><a href="http://trinea.iteye.com/blog/1216917" target="_blank">http://trinea.iteye.com/blog/1216917</a></li>
+<li><a href="https://stackoverflow.com/a/14930180/2163429" target="_blank">cannot start jstatd due to permission error</a></li>
+</ul>
 
                                 
                                 </section>
@@ -927,7 +926,7 @@
 
             
                 
-                <a href="re-frame.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Re-frame">
+                <a href="hystrix.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Hystrix">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -939,7 +938,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"figwheel","level":"3.1.2","depth":2,"next":{"title":"Java","level":"4.1","depth":1,"ref":"","articles":[{"title":"Hystrix","level":"4.1.1","depth":2,"path":"java/hystrix.md","ref":"java/hystrix.md","articles":[]},{"title":"Jvisualvm","level":"4.1.2","depth":2,"path":"java/jvisualvm.md","ref":"java/jvisualvm.md","articles":[]}]},"previous":{"title":"Re-frame","level":"3.1.1","depth":2,"path":"clojure/re-frame.md","ref":"clojure/re-frame.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.2.1","level":"2.1.3.2","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.2.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.2.2","level":"2.1.3.2","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.2.2"},{"backlink":"mac/editor/emacs/python.html#fig2.1.3.2.1.1","level":"2.1.3.2.1","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":5,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"2.1.3.2.1.1"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":6,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":7,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"clojure/re-frame.html#fig3.1.1.1","level":"3.1.1","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":8,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.1.1"},{"backlink":"java/jvisualvm.html#fig4.1.2.1","level":"4.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":9,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"4.1.2.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"clojure/figwheel.md","mtime":"2018-01-31T06:21:49.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T03:37:38.412Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Jvisualvm","level":"4.1.2","depth":2,"next":{"title":"Ubuntu","level":"5.1","depth":1,"ref":"","articles":[{"title":"apt-get","level":"5.1.1","depth":2,"path":"ubuntu/apt-get.md","ref":"ubuntu/apt-get.md","articles":[]},{"title":"Emacs","level":"5.1.2","depth":2,"path":"ubuntu/emacs.md","ref":"ubuntu/emacs.md","articles":[]},{"title":"ss","level":"5.1.3","depth":2,"path":"ubuntu/ss.md","ref":"ubuntu/ss.md","articles":[]},{"title":"sar","level":"5.1.4","depth":2,"path":"ubuntu/sar.md","ref":"ubuntu/sar.md","articles":[]}]},"previous":{"title":"Hystrix","level":"4.1.1","depth":2,"path":"java/hystrix.md","ref":"java/hystrix.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.2.1","level":"2.1.3.2","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.2.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.2.2","level":"2.1.3.2","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.2.2"},{"backlink":"mac/editor/emacs/python.html#fig2.1.3.2.1.1","level":"2.1.3.2.1","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":5,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"2.1.3.2.1.1"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":6,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":7,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"clojure/re-frame.html#fig3.1.1.1","level":"3.1.1","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":8,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.1.1"},{"backlink":"java/jvisualvm.html#fig4.1.2.1","level":"4.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":9,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"4.1.2.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"java/jvisualvm.md","mtime":"2018-03-12T03:36:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-03-12T03:37:38.412Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
