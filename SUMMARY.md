@@ -38,6 +38,11 @@
 * Java
     * [Hystrix](java/hystrix.md)
     * [Jvisualvm](java/jvisualvm.md)
+    * [内存模型](java/memory.md)
+
+-----
+* JS
+    * [userscript](js/userscript.md)
 
 -----
 * Ubuntu
@@ -45,10 +50,13 @@
     * [Emacs](ubuntu/emacs.md)
     * [ss](ubuntu/ss.md)
     * [sar](ubuntu/sar.md)
+    * [top](ubuntu/top.md)
+    * [misc](ubuntu/misc.md)
 
 -----
 * DB
     * [Mongodb](db/mongo.md)
+    * [Redis](db/redis.md)
 
 -----
 * Queue
@@ -60,4 +68,8 @@
     * [Hbase](hadoop/hbase.md)
     * [Hive](hadoop/hive.md)
     * [HDFS](hadoop/hdfs.md)
+
+-----
+* FE
+    * [React](fe/react.md)
 

@@ -1,3 +1,13 @@
+## 锁屏
+
+习惯 Windows 的用户，有一个很方便的锁屏快捷键 Win + L，但是 Mac 在升级到某个版本后，突然间取消了锁屏的快捷键，可以参考知乎上这个解决方法：
+
+- [Mac OS X 如何才能用快捷键锁屏?](https://www.zhihu.com/question/20094264/answer/153670327)
+
+如果希望 sleep 再次唤醒时需要输入密码，可以修改一处设置：
+
+![系统设置--安全与隐私--通用](/images/mac_sleep_lock.png)
+
 ## 修改 maxfiles
 
 - https://superuser.com/questions/302754/increase-the-maximum-number-of-open-file-descriptors-in-snow-leopard/1171023#1171023

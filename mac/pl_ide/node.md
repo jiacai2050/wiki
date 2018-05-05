@@ -1,7 +1,8 @@
 # Node
 
 推荐使用 [nvm](https://github.com/creationix/nvm) 进行多版本管理
-```
+
+```sh
 brew install nvm
 
 # 之后在 .bash_profile 中添加
@@ -11,7 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ## nvm 常用命令
 
-```
+```sh
 # 安装某个版本
 nvm install node-${version}
 
@@ -29,4 +30,14 @@ nvm install node-${new-version} --reinstall-packages-from=node-${old-version}
 
 # 卸载某个版本
 nvm uninstall node-${version}
+```
+
+## 国内源加速
+
+`cat ~/.npmrc`
+
+```
+registry=https://registry.npm.taobao.org/
+disturl=https://npm.taobao.org/mirrors/node
+ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron
 ```

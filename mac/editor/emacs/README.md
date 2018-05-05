@@ -22,6 +22,11 @@ export ALTERNATE_EDITOR=""
 ```
 上面的配置会调用 `emacsclient` 去连接 `emacs daemon`服务，如果服务没启，就先启动服务再去连接。
 
+### 入门教程
+
+- https://www.gnu.org/software/emacs/tour/
+- http://batsov.com/articles/2011/11/19/why-emacs/
+
 ### 常用命令
 
 ```
@@ -69,3 +74,12 @@ alias e='emacsclient -t -a ""'
 - [Where do I find a list of terminal key codes to remap shortcuts in bash?](https://unix.stackexchange.com/a/76591/101540)
 
 最后， Emacs 配置文件推荐用 git 进行版本管理，方便迁移与交流。这是我的 [.emacs.d](https://github.com/jiacai2050/dotfiles/tree/master/.emacs.d)。
+
+### 扩展阅读
+- markdown 支持：https://github.com/yoshuawuyts/vmd
+- GUI vs Teriminal
+  - https://www.emacswiki.org/emacs/iTerm2
+  - [终端使用 Emacs 与 Emacs GUI 的区别？](https://emacs-china.org/t/emacs-emacs-gui/222)
+  - https://www.gnu.org/software/emacs/manual/html_node/elisp/Images.html#Images
+    
+    
