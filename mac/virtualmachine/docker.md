@@ -38,6 +38,34 @@ docker build -t nginx:v3 .
 
 ```
 
+## JVM in Docker and PTRACE_ATTACH
+
+Docker 1.10 之后加了些安全限制，导致无法 ptrace 无法使用，进而导致 jmap 无法使用。解决访问
+```
+docker run --cap-add=SYS_PTRACE alpine sh -c 'apk add -U strace && strace echo'
+
+## docker-compose 自1.1.0版本后支持 cap_add
+version: '2'
+
+services:
+  api:
+    ...
+    cap_add:
+      - SYS_PTRACE
+```
+- https://jarekprzygodzki.wordpress.com/2016/12/19/jvm-in-docker-and-ptrace_attach/
+- https://docs.docker.com/engine/reference/run/#additional-groups
+
+## Remote APIs
+
+```sh
+配置启动参数
+DOCKER_OPTS="--registry-mirror=https://registry.docker-cn.com -H tcp://0.0.0.0:4243"
+curl localhost:4243/images/json 
+
+```
+- https://docs.docker.com/engine/api/v1.24/#3-endpoints
+
 ## Dockerfile
 
 ```shell

@@ -1,3 +1,10 @@
+## 清 dns 缓存
+
+```
+sudo killall -HUP mDNSResponder
+```
+
+- https://support.apple.com/en-us/HT202516
 ## 锁屏
 
 习惯 Windows 的用户，有一个很方便的锁屏快捷键 Win + L，但是 Mac 在升级到某个版本后，突然间取消了锁屏的快捷键，可以参考知乎上这个解决方法：

@@ -1,7 +1,10 @@
 # Hystrix
 
+![Hystrix 工作流程图](/images/java/hystrixFlowChart.jpeg)
+
+- https://github.com/Netflix/Hystrix/wiki/How-it-Works
 ## 创建
-```
+```java
 import com.netflix.hystrix.HystrixCommand;
 import com.netflix.hystrix.HystrixCommandGroupKey;
 import org.slf4j.Logger;
@@ -22,7 +25,7 @@ import org.slf4j.LoggerFactory;
 ```
 
 ## 使用
-```
+```java
 HelloWorldCommand helloWorldCommand = new HelloWorldCommand("World");
 assertEquals("Hello World", helloWorldCommand.execute());
 
