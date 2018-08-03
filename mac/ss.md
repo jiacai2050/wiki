@@ -1,9 +1,50 @@
+使用 https://shadowsocks.org/ 进行科学上网
+
+- https://shadowsocks.org/en/config/quick-guide.html
+
+## Server
+
+推荐去 [Google Compute Engine](https://cloud.google.com/compute/) 购买虚拟机，有一年的免费额度。
+
+```
+# 1. 安装 ss 服务端
+pip install shadowsocks
+
+# 2. 编辑配置文件
+# https://wiki.archlinux.org/index.php/Shadowsocks
+cat /etc/shadowsocks.json
+{
+    "server":"0.0.0.0",
+    "server_port": 443,
+    "password":"mypassword",
+    "timeout":600,
+    "method":"aes-256-cfb",
+    "fast_open": true,
+    "workers": 2
+}
+# 3. 安装 tmux 多屏服用
+yum install -y tmux
+
+# 4. nohup 启动, 最好在 tmux 内执行
+nohup ss-server -c /etc/shadowsocks.json
+```
+
+## Client
 
 ```
 brew install shadowsocks-libev
 ```
 Mac 下不推荐安装 GUI 版本，已经很久没人维护了。安装之后编辑`/usr/local/etc/shadowsocks-libev.json`，填入 server 地址即可。
 ```
+cat /usr/local/etc/shadowsocks-libev.json
+{
+    "server": "your-server-ip",
+    "server_port": 443,
+    "local_port": 1080,
+    "password": "mypassword",
+    "timeout": 600,
+    "method": "aes-256-cfb"
+}
 # 测试
 ss-local -v -c /usr/local/etc/shadowsocks-libev.json
 # 开机启动
