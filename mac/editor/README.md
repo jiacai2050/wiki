@@ -1,3 +1,11 @@
+折腾过无数编辑器，最终停留在了 Emacs，偶尔也会用 TextMate 编辑汉字，Emacs 下汉字有些卡。
+
+## TextMate
+```
+brew cask install textmate
+```
+
+
 ## Sublime/Atom/VSCode
 
 ```
@@ -6,7 +14,7 @@ brew cask install sublime-text
 brew cask install atom
 brew cask install visual-studio-code
 ```
-我依次用过 sublime -> atom -> vscode，最后还是回到了 sublime 的怀抱，我个人不是很喜欢用 JS 写的 vscode/atom，相比之下我更相信 [C++ 写的 sublime](https://news.ycombinator.com/item?id=2822114)，比较编辑器这东西对性能要求还是挺高的，尤其是知道了 sublime 是一个 [Google 员工辞职开发的产品](https://www.quora.com/What-is-the-story-behind-Sublime-Text)，这才是情怀好嘛！
+再早之前，依次用过 sublime -> atom -> vscode，最后还是回到了 sublime 的怀抱，我个人不是很喜欢用 JS 写的 vscode/atom，相比之下我更相信 [C++ 写的 sublime](https://news.ycombinator.com/item?id=2822114)，比较编辑器这东西对性能要求还是挺高的，尤其是知道了 sublime 是一个 [Google 员工辞职开发的产品](https://www.quora.com/What-is-the-story-behind-Sublime-Text)，这才是情怀好嘛！
 
 
 由于 sublime 出现的最早，所以 atom 与 vscode 都提供了与之类似的快捷键：

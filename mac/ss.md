@@ -5,6 +5,7 @@
 ## Server
 
 推荐去 [Google Compute Engine](https://cloud.google.com/compute/) 购买虚拟机，有一年的免费额度。
+如果自己有域名，可以绑定一个二级域名的 A 记录到虚拟机的外网 IP，方便记忆。
 
 ```
 # 1. 安装 ss 服务端
@@ -38,7 +39,7 @@ Mac 下不推荐安装 GUI 版本，已经很久没人维护了。安装之后�
 ```
 cat /usr/local/etc/shadowsocks-libev.json
 {
-    "server": "your-server-ip",
+    "server": "your-server-ip-or-domain",
     "server_port": 443,
     "local_port": 1080,
     "password": "mypassword",

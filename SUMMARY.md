@@ -6,8 +6,7 @@
 * [Mac OSX](mac/README.md)
     * [终端](mac/iterm2.md)
     * [SSH](mac/ssh.md)
-    * 编辑器
-        * [Sublime](mac/editor/sublime.md)
+    * [文本编辑器](mac/editor/README.md)
         * [Emacs](mac/editor/emacs/README.md)
             * [Python](mac/editor/emacs/python.md)
     * 编程语言与IDE
@@ -31,6 +30,7 @@
 
 -----
 * Clojure
+    * [Java Interop](clojure/java-interop.md)
     * [Re-frame](clojure/re-frame.md)
     * [figwheel](clojure/figwheel.md)
 
@@ -39,6 +39,7 @@
     * [Hystrix](java/hystrix.md)
     * [Jvisualvm](java/jvisualvm.md)
     * [内存模型](java/memory.md)
+    * [Eclipse Memory Analyzer](java/mat.md)
 
 -----
 * JS
