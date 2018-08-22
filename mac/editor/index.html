@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Docker · 家财的个人 Wiki</title>
+        <title>文本编辑器 · 家财的个人 Wiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../db_gui.html" />
+    <link rel="next" href="emacs/" />
     
     
-    <link rel="prev" href="vagrant.html" />
+    <link rel="prev" href="../ssh.html" />
     
 
     </head>
@@ -166,9 +166,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.3" data-path="../editor/">
+        <li class="chapter active" data-level="2.1.3" data-path="./">
             
-                <a href="../editor/">
+                <a href="./">
             
                     
                     文本编辑器
@@ -180,9 +180,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.3.1" data-path="../editor/emacs/">
+        <li class="chapter " data-level="2.1.3.1" data-path="emacs/">
             
-                <a href="../editor/emacs/">
+                <a href="emacs/">
             
                     
                     Emacs
@@ -194,9 +194,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.3.1.1" data-path="../editor/emacs/python.html">
+        <li class="chapter " data-level="2.1.3.1.1" data-path="emacs/python.html">
             
-                <a href="../editor/emacs/python.html">
+                <a href="emacs/python.html">
             
                     
                     Python
@@ -314,9 +314,9 @@
             
         </li>
     
-        <li class="chapter " data-level="2.1.6" data-path="virtualbox.html">
+        <li class="chapter " data-level="2.1.6" data-path="../virtualmachine/virtualbox.html">
             
-                <a href="virtualbox.html">
+                <a href="../virtualmachine/virtualbox.html">
             
                     
                     虚拟机
@@ -328,9 +328,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="2.1.6.1" data-path="vagrant.html">
+        <li class="chapter " data-level="2.1.6.1" data-path="../virtualmachine/vagrant.html">
             
-                <a href="vagrant.html">
+                <a href="../virtualmachine/vagrant.html">
             
                     
                     Vagrant
@@ -341,9 +341,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.1.6.2" data-path="docker.html">
+        <li class="chapter " data-level="2.1.6.2" data-path="../virtualmachine/docker.html">
             
-                <a href="docker.html">
+                <a href="../virtualmachine/docker.html">
             
                     
                     Docker
@@ -992,7 +992,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Docker</a>
+        <a href="../.." >文本编辑器</a>
     </h1>
 </div>
 
@@ -1007,117 +1007,35 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="docker">Docker</h2>
+                                <p>&#x6298;&#x817E;&#x8FC7;&#x65E0;&#x6570;&#x7F16;&#x8F91;&#x5668;&#xFF0C;&#x6700;&#x7EC8;&#x505C;&#x7559;&#x5728;&#x4E86; Emacs&#xFF0C;&#x5076;&#x5C14;&#x4E5F;&#x4F1A;&#x7528; TextMate &#x7F16;&#x8F91;&#x6C49;&#x5B57;&#xFF0C;Emacs &#x4E0B;&#x6C49;&#x5B57;&#x6709;&#x4E9B;&#x5361;&#x3002;</p>
+<h2 id="textmate">TextMate</h2>
+<pre><code>brew cask install textmate
+</code></pre><h2 id="sublimeatomvscode">Sublime/Atom/VSCode</h2>
 <pre><code># &#x5B89;&#x88C5;&#x547D;&#x4EE4;
-brew cask install docker
-</code></pre><p>&#x56FD;&#x5185;&#x8BBF;&#x95EE; Docker Hub &#x6709;&#x65F6;&#x4F1A;&#x9047;&#x5230;&#x56F0;&#x96BE;&#xFF0C;&#x6700;&#x597D;&#x914D;&#x7F6E;<a href="https://yeasy.gitbooks.io/docker_practice/install/mirror.html" target="_blank">&#x955C;&#x50CF;&#x52A0;&#x901F;&#x5668;</a>&#x3002;</p>
-<h2 id="entrypoint-vs-cmd"><a href="https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact" target="_blank">ENTRYPOINT vs. CMD</a></h2>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>No ENTRYPOINT</th>
-<th>ENTRYPOINT exec_entry p1_entry</th>
-<th>ENTRYPOINT [&#x201C;exec_entry&#x201D;, &#x201C;p1_entry&#x201D;]</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>No CMD</td>
-<td>error not allowed</td>
-<td>/bin/sh -c exec_entry p1_entry</td>
-<td>exec_entry p1_entry</td>
-</tr>
-<tr>
-<td>CMD [&#x201C;exec_cmd&#x201D;, &#x201C;p1_cmd&#x201D;]</td>
-<td>exec_cmd p1_cmd</td>
-<td>/bin/sh -c exec_entry p1_entry</td>
-<td>exec_entry p1_entry exec_cmd p1_cmd</td>
-</tr>
-<tr>
-<td>CMD [&#x201C;p1_cmd&#x201D;, &#x201C;p2_cmd&#x201D;]</td>
-<td>p1_cmd p2_cmd</td>
-<td>/bin/sh -c exec_entry p1_entry</td>
-<td>exec_entry p1_entry p1_cmd p2_cmd</td>
-</tr>
-<tr>
-<td>CMD exec_cmd p1_cmd</td>
-<td>/bin/sh -c exec_cmd p1_cmd</td>
-<td>/bin/sh -c exec_entry p1_entry</td>
-<td>exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd</td>
-</tr>
-</tbody>
-</table>
-<h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;">&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
-<pre><code class="lang-shell">
-# &#x4EE5;&#x4EA4;&#x4E92;&#x5F0F;&#x73AF;&#x5883;&#xFF0C;&#x6267;&#x884C;&#x4E00;&#x4E2A; bash&#xFF0C;&#x5E76;&#x5728; exit &#x540E;&#x5220;&#x9664;&#x8BE5; container
-docker run -it --rm \
-    debian:14.04 \
-    bash
-
-# &#x901A;&#x8FC7; volumns &#x5728;&#x5BBF;&#x4E3B;&#x673A;&#x4E0E; container &#x5171;&#x4EAB;&#x76EE;&#x5F55;
-docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
-
-# &#x865A;&#x60AC;&#x955C;&#x50CF;
-docker images -f dangling=true
-# &#x5220;&#x9664;&#x865A;&#x60AC;&#x955C;&#x50CF;
-docker image prune
-
-# &#x6784;&#x5EFA;&#x955C;&#x50CF;
-docker build -t nginx:v3 .
-</code></pre>
-<h2 id="jvm-in-docker-and-ptraceattach">JVM in Docker and PTRACE_ATTACH</h2>
-<p>Docker 1.10 &#x4E4B;&#x540E;&#x52A0;&#x4E86;&#x4E9B;&#x5B89;&#x5168;&#x9650;&#x5236;&#xFF0C;&#x5BFC;&#x81F4;&#x65E0;&#x6CD5; ptrace &#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#xFF0C;&#x8FDB;&#x800C;&#x5BFC;&#x81F4; jmap &#x65E0;&#x6CD5;&#x4F7F;&#x7528;&#x3002;&#x89E3;&#x51B3;&#x8BBF;&#x95EE;</p>
-<pre><code>docker run --cap-add=SYS_PTRACE alpine sh -c &apos;apk add -U strace &amp;&amp; strace echo&apos;
-
-## docker-compose &#x81EA;1.1.0&#x7248;&#x672C;&#x540E;&#x652F;&#x6301; cap_add
-version: &apos;2&apos;
-
-services:
-  api:
-    ...
-    cap_add:
-      - SYS_PTRACE
-</code></pre><ul>
-<li><a href="https://jarekprzygodzki.wordpress.com/2016/12/19/jvm-in-docker-and-ptrace_attach/" target="_blank">https://jarekprzygodzki.wordpress.com/2016/12/19/jvm-in-docker-and-ptrace_attach/</a></li>
-<li><a href="https://docs.docker.com/engine/reference/run/#additional-groups" target="_blank">https://docs.docker.com/engine/reference/run/#additional-groups</a></li>
-</ul>
-<h2 id="remote-apis">Remote APIs</h2>
-<pre><code class="lang-sh">&#x914D;&#x7F6E;&#x542F;&#x52A8;&#x53C2;&#x6570;
-DOCKER_OPTS=<span class="hljs-string">&quot;--registry-mirror=https://registry.docker-cn.com -H tcp://0.0.0.0:4243&quot;</span>
-curl localhost:4243/images/json
-</code></pre>
+brew cask install sublime-text
+brew cask install atom
+brew cask install visual-studio-code
+</code></pre><p>&#x518D;&#x65E9;&#x4E4B;&#x524D;&#xFF0C;&#x4F9D;&#x6B21;&#x7528;&#x8FC7; sublime -&gt; atom -&gt; vscode&#xFF0C;&#x6700;&#x540E;&#x8FD8;&#x662F;&#x56DE;&#x5230;&#x4E86; sublime &#x7684;&#x6000;&#x62B1;&#xFF0C;&#x6211;&#x4E2A;&#x4EBA;&#x4E0D;&#x662F;&#x5F88;&#x559C;&#x6B22;&#x7528; JS &#x5199;&#x7684; vscode/atom&#xFF0C;&#x76F8;&#x6BD4;&#x4E4B;&#x4E0B;&#x6211;&#x66F4;&#x76F8;&#x4FE1; <a href="https://news.ycombinator.com/item?id=2822114" target="_blank">C++ &#x5199;&#x7684; sublime</a>&#xFF0C;&#x6BD4;&#x8F83;&#x7F16;&#x8F91;&#x5668;&#x8FD9;&#x4E1C;&#x897F;&#x5BF9;&#x6027;&#x80FD;&#x8981;&#x6C42;&#x8FD8;&#x662F;&#x633A;&#x9AD8;&#x7684;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x77E5;&#x9053;&#x4E86; sublime &#x662F;&#x4E00;&#x4E2A; <a href="https://www.quora.com/What-is-the-story-behind-Sublime-Text" target="_blank">Google &#x5458;&#x5DE5;&#x8F9E;&#x804C;&#x5F00;&#x53D1;&#x7684;&#x4EA7;&#x54C1;</a>&#xFF0C;&#x8FD9;&#x624D;&#x662F;&#x60C5;&#x6000;&#x597D;&#x561B;&#xFF01;</p>
+<p>&#x7531;&#x4E8E; sublime &#x51FA;&#x73B0;&#x7684;&#x6700;&#x65E9;&#xFF0C;&#x6240;&#x4EE5; atom &#x4E0E; vscode &#x90FD;&#x63D0;&#x4F9B;&#x4E86;&#x4E0E;&#x4E4B;&#x7C7B;&#x4F3C;&#x7684;&#x5FEB;&#x6377;&#x952E;&#xFF1A;</p>
 <ul>
-<li><a href="https://docs.docker.com/engine/api/v1.24/#3-endpoints" target="_blank">https://docs.docker.com/engine/api/v1.24/#3-endpoints</a></li>
+<li><a href="https://github.com/Microsoft/vscode-sublime-keybindings" target="_blank">VSCode Sublime Text Keymap</a></li>
 </ul>
-<h2 id="dockerfile">Dockerfile</h2>
-<pre><code class="lang-shell">FROM java:7u121-jdk-alpine
-MAINTAINER Jiacai Liu jiacai2050@gmail.com
-
-ENV KESTREL_VERSION 2.4.1
-
-RUN set -xe \
-    \
-    &amp;&amp; wget -O kestrel.zip &quot;http://twitter-archive.github.io/kestrel/download/kestrel-$KESTREL_VERSION.zip&quot; \
-    &amp;&amp; mkdir /opt \
-    &amp;&amp; ls -lh \
-    &amp;&amp; unzip kestrel.zip -d /opt \
-    &amp;&amp; rm kestrel.zip \
-    &amp;&amp; ln -s /opt/kestrel-$KESTREL_VERSION /opt/kestrel
-
-
-ADD ./config.scala /opt/kestrel/config.scala
-
-WORKDIR /opt/kestrel
-
-EXPOSE 2222 2223 2229 22133
-
-# CMD &amp; ENTRYPOINT doesn&apos;t expand ENV, so CMD below doesn&apos;t work
-# CMD [&quot;/usr/bin/java&quot;, &quot;-jar&quot;, &quot;/opt/kestrel/kestrel_2.9.2-$KESTREL_VERSION.jar&quot;, &quot;-f&quot;, &quot;/opt/kestrel/config.scala&quot;]
-# See: https://github.com/moby/moby/issues/4783
-
-CMD [&quot;sh&quot;, &quot;-c&quot;, &quot;/usr/bin/java -jar /opt/kestrel/kestrel_2.9.2-$KESTREL_VERSION.jar -f /opt/kestrel/config.scala&quot;]
-</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x6211;&#x975E;&#x5E38;&#x4F9D;&#x8D56;&#x7684;&#x5FEB;&#x6377;&#x952E;&#xFF1A;</p>
+<ul>
+<li>Multiple Selection: <code>Control+Command+G</code>&#xFF08;&#x5728; Linux/Windows &#x4E0B;&#xFF0C;&#x662F; Alt+F3&#xFF09;</li>
+<li>&#x9009;&#x4E2D;&#x591A;&#x884C; <code>Shift+Command+L</code></li>
+<li>&#x591A;&#x884C;&#x5408;&#x5E76;&#x4E3A;&#x4E00;&#x884C;<code>Command+J</code></li>
+</ul>
+<h2 id="sublime-&#x63D2;&#x4EF6;&#x5B89;&#x88C5;">sublime &#x63D2;&#x4EF6;&#x5B89;&#x88C5;</h2>
+<p>&#x9996;&#x5148;&#x662F; <a href="https://packagecontrol.io/installation" target="_blank">Package Manager</a>&#xFF0C;&#x63A8;&#x8350;&#x76F4;&#x63A5;&#x7528; sublime text 3&#x3002;ctrl+` &#x6253;&#x5F00;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x8F93;&#x5165;</p>
+<pre><code>import urllib.request,os,hashlib; h = &apos;6f4c264a24d933ce70df5dedcf1dcaee&apos; + &apos;ebe013ee18cced0ef93d5f746d80ef60&apos;; pf = &apos;Package Control.sublime-package&apos;; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( &apos;http://packagecontrol.io/&apos; + pf.replace(&apos; &apos;, &apos;%20&apos;)).read(); dh = hashlib.sha256(by).hexdigest(); print(&apos;Error validating download (got %s instead of %s), please try manual install&apos; % (dh, h)) if dh != h else open(os.path.join( ipp, pf), &apos;wb&apos; ).write(by)
+</code></pre><p>&#x4E4B;&#x540E;&#x7684;&#x63D2;&#x4EF6;&#x901A;&#x8FC7; PM &#x5B89;&#x88C5;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#xFF08;<code>Shift+Command+P</code>&#xFF09;&#x3002;&#x6211;&#x7528;&#x5230;&#x7684;&#x6709;&#xFF1A;</p>
+<ul>
+<li><a href="https://github.com/revolunet/sublimetext-markdown-preview" target="_blank">Markdown Preview</a> &#x6709; github favor &#x7684;&#x8BED;&#x6CD5;&#x652F;&#x6301;</li>
+<li><a href="https://github.com/dzhibas/SublimePrettyJson" target="_blank">Pretty JSON</a></li>
+<li><a href="https://github.com/Foxboron/SublimeClojure" target="_blank">Enhanced Clojure</a></li>
+</ul>
+<p>&#x6211;&#x7528;&#x5230;&#x7684;&#x63D2;&#x4EF6;&#x6BD4;&#x8F83;&#x5C11;&#xFF0C;&#x6BD5;&#x7ADF;&#x6211;&#x7528;&#x7684;&#x6BD4;&#x8F83;&#x201C;&#x8F7B;&#x201D;&#xFF0C;&#x53EA;&#x662F;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x4E34;&#x65F6;&#x6027;&#x7684;&#x7F16;&#x8F91;&#x5DE5;&#x4F5C;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x5F00;&#x53D1;&#x8FD8;&#x662F;&#x653E;&#x5728; Emacs &#x4E0A;&#x3002;</p>
 
                                 
                                 </section>
@@ -1145,12 +1063,12 @@ CMD [&quot;sh&quot;, &quot;-c&quot;, &quot;/usr/bin/java -jar /opt/kestrel/kestr
 
             
                 
-                <a href="vagrant.html" class="navigation navigation-prev " aria-label="Previous page: Vagrant">
+                <a href="../ssh.html" class="navigation navigation-prev " aria-label="Previous page: SSH">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="../db_gui.html" class="navigation navigation-next " aria-label="Next page: 数据库 GUI">
+                <a href="emacs/" class="navigation navigation-next " aria-label="Next page: Emacs">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1161,7 +1079,7 @@ CMD [&quot;sh&quot;, &quot;-c&quot;, &quot;/usr/bin/java -jar /opt/kestrel/kestr
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Docker","level":"2.1.6.2","depth":3,"next":{"title":"数据库 GUI","level":"2.1.7","depth":2,"path":"mac/db_gui.md","ref":"mac/db_gui.md","articles":[]},"previous":{"title":"Vagrant","level":"2.1.6.1","depth":3,"path":"mac/virtualmachine/vagrant.md","ref":"mac/virtualmachine/vagrant.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.1","level":"2.1.3.1","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.2","level":"2.1.3.1","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.1.2"},{"backlink":"mac/editor/emacs/python.html#fig2.1.3.1.1.1","level":"2.1.3.1.1","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":5,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"2.1.3.1.1.1"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":6,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":7,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"mac/faq.html#fig2.1.14.1","level":"2.1.14","list_caption":"Figure: 系统设置--安全与隐私--通用","alt":"系统设置--安全与隐私--通用","nro":8,"url":"/images/mac_sleep_lock.png","index":1,"caption_template":"_CAPTION_","label":"系统设置--安全与隐私--通用","attributes":{},"skip":false,"key":"2.1.14.1"},{"backlink":"clojure/re-frame.html#fig3.1.2.1","level":"3.1.2","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":9,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.2.1"},{"backlink":"java/hystrix.html#fig4.1.1.1","level":"4.1.1","list_caption":"Figure: Hystrix 工作流程图","alt":"Hystrix 工作流程图","nro":10,"url":"/images/java/hystrixFlowChart.jpeg","index":1,"caption_template":"_CAPTION_","label":"Hystrix 工作流程图","attributes":{},"skip":false,"key":"4.1.1.1"},{"backlink":"java/jvisualvm.html#fig4.1.2.1","level":"4.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":11,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"4.1.2.1"},{"backlink":"java/memory.html#fig4.1.3.1","level":"4.1.3","list_caption":"Figure: JVM内存结构布局","alt":"JVM内存结构布局","nro":12,"url":"/images/java/jvm03.png","index":1,"caption_template":"_CAPTION_","label":"JVM内存结构布局","attributes":{},"skip":false,"key":"4.1.3.1"},{"backlink":"java/memory.html#fig4.1.3.2","level":"4.1.3","list_caption":"Figure: JVM内存调整参数","alt":"JVM内存调整参数","nro":13,"url":"/images/java/jvm04.png","index":2,"caption_template":"_CAPTION_","label":"JVM内存调整参数","attributes":{},"skip":false,"key":"4.1.3.2"},{"backlink":"java/memory.html#fig4.1.3.3","level":"4.1.3","list_caption":"Figure: JVM和系统调用之间的关系","alt":"JVM和系统调用之间的关系","nro":14,"url":"/images/java/jvm05.png","index":3,"caption_template":"_CAPTION_","label":"JVM和系统调用之间的关系","attributes":{},"skip":false,"key":"4.1.3.3"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"mac/virtualmachine/docker.md","mtime":"2018-07-14T05:12:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-22T09:33:13.261Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"文本编辑器","level":"2.1.3","depth":2,"next":{"title":"Emacs","level":"2.1.3.1","depth":3,"path":"mac/editor/emacs/README.md","ref":"mac/editor/emacs/README.md","articles":[{"title":"Python","level":"2.1.3.1.1","depth":4,"path":"mac/editor/emacs/python.md","ref":"mac/editor/emacs/python.md","articles":[]}]},"previous":{"title":"SSH","level":"2.1.2","depth":2,"path":"mac/ssh.md","ref":"mac/ssh.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.1","level":"2.1.3.1","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.2","level":"2.1.3.1","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.1.2"},{"backlink":"mac/editor/emacs/python.html#fig2.1.3.1.1.1","level":"2.1.3.1.1","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":5,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"2.1.3.1.1.1"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":6,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":7,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"mac/faq.html#fig2.1.14.1","level":"2.1.14","list_caption":"Figure: 系统设置--安全与隐私--通用","alt":"系统设置--安全与隐私--通用","nro":8,"url":"/images/mac_sleep_lock.png","index":1,"caption_template":"_CAPTION_","label":"系统设置--安全与隐私--通用","attributes":{},"skip":false,"key":"2.1.14.1"},{"backlink":"clojure/re-frame.html#fig3.1.2.1","level":"3.1.2","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":9,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.2.1"},{"backlink":"java/hystrix.html#fig4.1.1.1","level":"4.1.1","list_caption":"Figure: Hystrix 工作流程图","alt":"Hystrix 工作流程图","nro":10,"url":"/images/java/hystrixFlowChart.jpeg","index":1,"caption_template":"_CAPTION_","label":"Hystrix 工作流程图","attributes":{},"skip":false,"key":"4.1.1.1"},{"backlink":"java/jvisualvm.html#fig4.1.2.1","level":"4.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":11,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"4.1.2.1"},{"backlink":"java/memory.html#fig4.1.3.1","level":"4.1.3","list_caption":"Figure: JVM内存结构布局","alt":"JVM内存结构布局","nro":12,"url":"/images/java/jvm03.png","index":1,"caption_template":"_CAPTION_","label":"JVM内存结构布局","attributes":{},"skip":false,"key":"4.1.3.1"},{"backlink":"java/memory.html#fig4.1.3.2","level":"4.1.3","list_caption":"Figure: JVM内存调整参数","alt":"JVM内存调整参数","nro":13,"url":"/images/java/jvm04.png","index":2,"caption_template":"_CAPTION_","label":"JVM内存调整参数","attributes":{},"skip":false,"key":"4.1.3.2"},{"backlink":"java/memory.html#fig4.1.3.3","level":"4.1.3","list_caption":"Figure: JVM和系统调用之间的关系","alt":"JVM和系统调用之间的关系","nro":14,"url":"/images/java/jvm05.png","index":3,"caption_template":"_CAPTION_","label":"JVM和系统调用之间的关系","attributes":{},"skip":false,"key":"4.1.3.3"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"mac/editor/README.md","mtime":"2018-08-22T09:30:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-08-22T09:33:13.261Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
