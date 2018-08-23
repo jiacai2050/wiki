@@ -75,11 +75,22 @@ alias e='emacsclient -t -a ""'
 
 最后， Emacs 配置文件推荐用 git 进行版本管理，方便迁移与交流。这是我的 [.emacs.d](https://github.com/jiacai2050/dotfiles/tree/master/.emacs.d)。
 
+### Org-mode 导出PDF文件
+
+Org 导出 pdf 依赖于 LaTeX，Mac 下推荐安装 basictex 这个精简版的，可能需要单独使用 tlmgr 安装额外的 `*.sty` 文件
+```
+brew cask install basictex
+sudo tlmgr update --self
+sudo tlmgr install wrapfig
+sudo tlmgr install capt-of
+```
+- https://orgmode.org/worg/org-tutorials/org-latex-export.html 有介绍如何改变导出引擎为 XeTeX
+- https://www.pydanny.com/setting-up-latex-on-mac-os-x.html
+- https://github.com/jiacai2050/dotfiles/blob/master/.emacs.d/customizations/setup-org.el
+
 ### 扩展阅读
 - markdown 支持：https://github.com/yoshuawuyts/vmd
 - GUI vs Teriminal
   - https://www.emacswiki.org/emacs/iTerm2
   - [终端使用 Emacs 与 Emacs GUI 的区别？](https://emacs-china.org/t/emacs-emacs-gui/222)
   - https://www.gnu.org/software/emacs/manual/html_node/elisp/Images.html#Images
-    
-    
