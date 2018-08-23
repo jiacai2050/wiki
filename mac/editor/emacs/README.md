@@ -83,8 +83,12 @@ brew cask install basictex
 sudo tlmgr update --self
 sudo tlmgr install wrapfig
 sudo tlmgr install capt-of
+# PDF 导出时，需要 cjk 包，然后需要配置org-latex-packages-alist，具体参考 setup-org.el
+sudo tlmgr install cjk
 ```
 - https://orgmode.org/worg/org-tutorials/org-latex-export.html 有介绍如何改变导出引擎为 XeTeX
+- https://orgmode.org/worg/org-dependencies.html
+- https://orgmode.org/manual/LaTeX-header-and-sectioning.html
 - https://www.pydanny.com/setting-up-latex-on-mac-os-x.html
 - https://github.com/jiacai2050/dotfiles/blob/master/.emacs.d/customizations/setup-org.el
 
