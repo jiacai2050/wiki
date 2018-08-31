@@ -2,7 +2,9 @@
 
 ```
 # 安装命令
-brew install emacs
+# org-mode 显示 inline image 时需要 imagemagick@6
+# https://emacs.stackexchange.com/questions/30559/org-mode-inline-image-display-size/30560
+brew install emacs --with-cocoa --with-dbus --with-librsvg --with-imagemagick@6 --with-mailutils
 brew install sbcl # 顺便把 common lisp 也装上
 ```
 其实 Mac 是有自带 Emacs 的，位置是`/usr/bin/emacs`，只是版本非常旧，通过`brew`安装的位置在`/usr/local/bin/emacs`，可以通过下面的命令删除 Mac 自带的 Emacs：
