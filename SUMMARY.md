@@ -49,9 +49,9 @@
 * Ubuntu
     * [apt-get](ubuntu/apt-get.md)
     * [Emacs](ubuntu/emacs.md)
-    * [ss](ubuntu/ss.md)
+    * [查看进程 ps/top](ubuntu/process.md)
+    * [查看socket ss](ubuntu/ss.md)
     * [sar](ubuntu/sar.md)
-    * [top](ubuntu/top.md)
     * [misc](ubuntu/misc.md)
 
 -----
