@@ -28,14 +28,16 @@ docker run -it --rm \
 # 通过 volumns 在宿主机与 container 共享目录
 docker run -d -v ~/nginxlogs:/var/log/nginx -p 5000:80 -i nginx
 
+# 进入通过 -d 参数启动的后台 container
+docker exec -it ${container_id} bash
+
 # 虚悬镜像
 docker images -f dangling=true
 # 删除虚悬镜像
 docker image prune
 
-# 构建镜像
+# 构建镜像，在具有 Dockerfile 的目录下执行
 docker build -t nginx:v3 .
-
 ```
 
 ## JVM in Docker and PTRACE_ATTACH

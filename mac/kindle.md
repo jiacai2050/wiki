@@ -1,6 +1,6 @@
-### Calibre mobi 转化器
+## Calibre mobi 转化器
 
-如果你有 Kinder 阅读器，那么这个应该适合你！
+Calibre 电子书管理工具，功能非常全面，支持各种电子书格式的转换。
 ```
 # 安装命令
 brew cask install calibre
@@ -29,4 +29,25 @@ brew cask install calibre
 ==> Linking Binary 'web2disk' to '/usr/local/bin/web2disk'.
 ```
 
+## k2pdfopt
 
+- http://www.willus.com/k2pdfopt/download/
+
+这个软件可以对一般普通的电子书针对移动设备优化，极大提高阅读体验，谁用谁知道！
+
+## PDF 切割
+
+通过邮件发送 PDF 书籍到 kindle 时，有最大 50M 的限制，所以对于再大的书籍，就需要用数据线进行传输了，但是现在谁还有数据线呀，所以我选择的做法是对 PDF 进行切割！
+
+```
+sudo apt-get install pdftk
+
+# 把第5页输出到一个新 PDF 文件中
+pdftk ORIG_FILE.pdf cat 5 output NEW_FILE.pdf
+
+# 范围为 1-5 页
+pdftk ORIG_FILE.pdf cat 1-5 output NEW_FILE.pdf
+
+pdftk ORIG_FILE.pdf cat 1 5 7 10-12 output NEW_FILE.pdf
+```
+- https://www.zhihu.com/question/37247669/answer/493037658
