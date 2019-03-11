@@ -32,3 +32,12 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 
 - 中科大，https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git
 - 清华，https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
+
+## Terminal
+
+Terminal 为 macOS 自动的终端仿真器，针对个人习惯，我一般会做如下配置：
+
+![](/images/mac_terminal_config.jpg)
+
+- 上面的红框，使得「HOME」「END」移动到行首或行尾，参考 https://superuser.com/a/33370
+- 下面的红框，使得 「Option」作为 meta key，主要是 Emacs 中使用
