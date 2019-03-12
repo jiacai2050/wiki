@@ -6,6 +6,9 @@ brew cask install docker
 ```
 国内访问 Docker Hub 有时会遇到困难，最好配置[镜像加速器](https://yeasy.gitbooks.io/docker_practice/install/mirror.html)。
 
+- http://registry.docker-cn.com
+
+
 ## [ENTRYPOINT vs. CMD](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact)
 
 | |No ENTRYPOINT|  ENTRYPOINT exec_entry p1_entry|  ENTRYPOINT [“exec_entry”, “p1_entry”] |

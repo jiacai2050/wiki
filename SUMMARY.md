@@ -26,6 +26,7 @@
     * [音乐，视频](mac/music_video.md)
     * [Kindle](mac/kindle.md)
     * [压缩软件](mac/compression.md)
+    * [下载软件](mac/download.md)
     * [FAQ](mac/faq.md)
 
 -----
