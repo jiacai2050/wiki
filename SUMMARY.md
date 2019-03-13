@@ -48,6 +48,7 @@
 
 -----
 * Ubuntu
+    * [开发环境准备](ubuntu/dev.md)
     * [apt-get](ubuntu/apt-get.md)
     * [Emacs](ubuntu/emacs.md)
     * [查看进程 ps/top](ubuntu/process.md)

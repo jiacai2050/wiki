@@ -27,6 +27,8 @@ vagrant destroy --force   # 销毁该 guest
 
 # 增加国内源 box
 vagrant box add https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box --name tsing/trusty
+vagrant box add https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cloud-images/bionic/current/bionic-server-cloudimg-amd64-vagrant.box --name tsing/bionic
+
 
 ```
 
