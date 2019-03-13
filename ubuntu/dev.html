@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>apt-get · 家财的个人 Wiki</title>
+        <title>开发环境准备 · 家财的个人 Wiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="emacs.html" />
+    <link rel="next" href="apt-get.html" />
     
-    
-    <link rel="prev" href="dev.html" />
     
 
     </head>
@@ -684,7 +682,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="6.1.1" data-path="dev.html">
+        <li class="chapter active" data-level="6.1.1" data-path="dev.html">
             
                 <a href="dev.html">
             
@@ -697,7 +695,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.1.2" data-path="apt-get.html">
+        <li class="chapter " data-level="6.1.2" data-path="apt-get.html">
             
                 <a href="apt-get.html">
             
@@ -1018,7 +1016,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >apt-get</a>
+        <a href=".." >开发环境准备</a>
     </h1>
 </div>
 
@@ -1033,16 +1031,54 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="apt-get">apt-get</h1>
-<p>&#x4E3A;&#x4E86;&#x63D0;&#x9AD8;&#x4E0B;&#x8F7D;&#x901F;&#x5EA6;&#xFF0C;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x56FD;&#x5185;&#x6E90; /etc/apt/sources.list</p>
-<ul>
-<li><a href="https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu" target="_blank">https://lug.ustc.edu.cn/wiki/mirrors/help/ubuntu</a></li>
-<li><a href="http://mirrors.163.com/.help/ubuntu.html" target="_blank">http://mirrors.163.com/.help/ubuntu.html</a></li>
-<li><a href="https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/" target="_blank">https://mirror.tuna.tsinghua.edu.cn/help/ubuntu/</a></li>
-<li><a href="https://mirrors.aliyun.com/help/ubuntu" target="_blank">https://mirrors.aliyun.com/help/ubuntu</a></li>
+                                <h2 id="basic">basic</h2>
+<pre><code>sudo apt-get install build-essential
+</code></pre><h2 id="gcc-8">GCC 8</h2>
+<pre><code>sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt-get update
+sudo apt-get install gcc-8 g++-8
+gcc-8 --version
+
+# &#x9ED8;&#x8BA4;&#x4F7F;&#x7528; gcc-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 800 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+</code></pre><ul>
+<li><a href="https://askubuntu.com/a/1087116" target="_blank">https://askubuntu.com/a/1087116</a></li>
+<li><a href="http://tuxamito.com/wiki/index.php/Installing_newer_GCC_versions_in_Ubuntu" target="_blank">http://tuxamito.com/wiki/index.php/Installing_newer_GCC_versions_in_Ubuntu</a></li>
 </ul>
-<pre><code>sudo sed -i &apos;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&apos; /etc/apt/sources.list
+<pre><code>sudo update-alternatives --remove-all gcc
+
+
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 90 --slave /usr/bin/g++ g++ /usr/bin/g++-8
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-6 80 --slave /usr/bin/g++ g++ /usr/bin/g++-6
+sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 70 --slave /usr/bin/g++ g++ /usr/bin/g++-7
+
+
+sudo update-alternatives --config gcc
+</code></pre><h3 id="python">Python</h3>
+<pre><code class="lang-sh"><span class="hljs-comment"># https://github.com/pyenv/pyenv/wiki/Common-build-problems</span>
+sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
+
+git <span class="hljs-built_in">clone</span> https://github.com/pyenv/pyenv.git ~/.pyenv
+
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;export PYENV_ROOT=&quot;$HOME/.pyenv&quot;&apos;</span> &gt;&gt; ~/.bashrc
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;export PATH=&quot;$PYENV_ROOT/bin:$PATH&quot;&apos;</span> &gt;&gt; ~/.bashrc
+<span class="hljs-built_in">echo</span> <span class="hljs-_">-e</span> <span class="hljs-string">&apos;if command -v pyenv 1&gt;/dev/null 2&gt;&amp;1; then\n  eval &quot;$(pyenv init -)&quot;\nfi&apos;</span> &gt;&gt; ~/.bashrc
+
+<span class="hljs-built_in">exec</span> <span class="hljs-string">&quot;<span class="hljs-variable">$SHELL</span>&quot;</span>
+
+<span class="hljs-comment"># &#x56FD;&#x5185;&#x6E90;&#x4E0B;&#x8F7D; python </span>
+v=3.7.1;wget http://mirrors.sohu.com/python/<span class="hljs-variable">$v</span>/Python-<span class="hljs-variable">$v</span>.tar.xz -P ~/.pyenv/cache/;
+pyenv install <span class="hljs-variable">$v</span>
+
+pyenv install 2.7.16
+
+
+git <span class="hljs-built_in">clone</span> https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+<span class="hljs-built_in">echo</span> <span class="hljs-string">&apos;eval &quot;$(pyenv virtualenv-init -)&quot;&apos;</span> &gt;&gt; ~/.bash
 </code></pre>
+
                                 
                                 </section>
                             
@@ -1069,12 +1105,8 @@
 
             
                 
-                <a href="dev.html" class="navigation navigation-prev " aria-label="Previous page: 开发环境准备">
-                    <i class="fa fa-angle-left"></i>
-                </a>
                 
-                
-                <a href="emacs.html" class="navigation navigation-next " aria-label="Next page: Emacs">
+                <a href="apt-get.html" class="navigation navigation-next navigation-unique" aria-label="Next page: apt-get">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1085,7 +1117,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"apt-get","level":"6.1.2","depth":2,"next":{"title":"Emacs","level":"6.1.3","depth":2,"path":"ubuntu/emacs.md","ref":"ubuntu/emacs.md","articles":[]},"previous":{"title":"开发环境准备","level":"6.1.1","depth":2,"path":"ubuntu/dev.md","ref":"ubuntu/dev.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.1","level":"2.1.3.1","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.2","level":"2.1.3.1","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.1.2"},{"backlink":"mac/editor/emacs/python.html#fig2.1.3.1.1.1","level":"2.1.3.1.1","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":5,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"2.1.3.1.1.1"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":6,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":7,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"mac/faq.html#fig2.1.15.1","level":"2.1.15","list_caption":"Figure: 系统设置--安全与隐私--通用","alt":"系统设置--安全与隐私--通用","nro":8,"url":"/images/mac_sleep_lock.png","index":1,"caption_template":"_CAPTION_","label":"系统设置--安全与隐私--通用","attributes":{},"skip":false,"key":"2.1.15.1"},{"backlink":"clojure/re-frame.html#fig3.1.2.1","level":"3.1.2","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":9,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.2.1"},{"backlink":"java/hystrix.html#fig4.1.1.1","level":"4.1.1","list_caption":"Figure: Hystrix 工作流程图","alt":"Hystrix 工作流程图","nro":10,"url":"/images/java/hystrixFlowChart.jpeg","index":1,"caption_template":"_CAPTION_","label":"Hystrix 工作流程图","attributes":{},"skip":false,"key":"4.1.1.1"},{"backlink":"java/jvisualvm.html#fig4.1.2.1","level":"4.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":11,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"4.1.2.1"},{"backlink":"java/memory.html#fig4.1.3.1","level":"4.1.3","list_caption":"Figure: JVM内存调整参数","alt":"JVM内存调整参数","nro":12,"url":"/images/java/jvm_gc_algorithms.png","index":1,"caption_template":"_CAPTION_","label":"JVM内存调整参数","attributes":{},"skip":false,"key":"4.1.3.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"ubuntu/apt-get.md","mtime":"2019-03-11T01:10:26.817Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-13T07:27:35.180Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"开发环境准备","level":"6.1.1","depth":2,"next":{"title":"apt-get","level":"6.1.2","depth":2,"path":"ubuntu/apt-get.md","ref":"ubuntu/apt-get.md","articles":[]},"previous":{"title":"Ubuntu","level":"6.1","depth":1,"ref":"","articles":[{"title":"开发环境准备","level":"6.1.1","depth":2,"path":"ubuntu/dev.md","ref":"ubuntu/dev.md","articles":[]},{"title":"apt-get","level":"6.1.2","depth":2,"path":"ubuntu/apt-get.md","ref":"ubuntu/apt-get.md","articles":[]},{"title":"Emacs","level":"6.1.3","depth":2,"path":"ubuntu/emacs.md","ref":"ubuntu/emacs.md","articles":[]},{"title":"查看进程 ps/top","level":"6.1.4","depth":2,"path":"ubuntu/process.md","ref":"ubuntu/process.md","articles":[]},{"title":"查看socket ss","level":"6.1.5","depth":2,"path":"ubuntu/ss.md","ref":"ubuntu/ss.md","articles":[]},{"title":"sar","level":"6.1.6","depth":2,"path":"ubuntu/sar.md","ref":"ubuntu/sar.md","articles":[]},{"title":"misc","level":"6.1.7","depth":2,"path":"ubuntu/misc.md","ref":"ubuntu/misc.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":1,"url":"/images/suo.jpg","index":1,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"mac/index.html#fig2.1.1","level":"2.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":2,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"2.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.1","level":"2.1.3.1","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":3,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"2.1.3.1.1"},{"backlink":"mac/editor/emacs/index.html#fig2.1.3.1.2","level":"2.1.3.1","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":4,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"2.1.3.1.2"},{"backlink":"mac/editor/emacs/python.html#fig2.1.3.1.1.1","level":"2.1.3.1.1","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":5,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"2.1.3.1.1.1"},{"backlink":"mac/virtualmachine/virtualbox.html#fig2.1.6.1","level":"2.1.6","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":6,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"2.1.6.1"},{"backlink":"mac/picture.html#fig2.1.10.1","level":"2.1.10","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":7,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"2.1.10.1"},{"backlink":"mac/faq.html#fig2.1.15.1","level":"2.1.15","list_caption":"Figure: 系统设置--安全与隐私--通用","alt":"系统设置--安全与隐私--通用","nro":8,"url":"/images/mac_sleep_lock.png","index":1,"caption_template":"_CAPTION_","label":"系统设置--安全与隐私--通用","attributes":{},"skip":false,"key":"2.1.15.1"},{"backlink":"clojure/re-frame.html#fig3.1.2.1","level":"3.1.2","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":9,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"3.1.2.1"},{"backlink":"java/hystrix.html#fig4.1.1.1","level":"4.1.1","list_caption":"Figure: Hystrix 工作流程图","alt":"Hystrix 工作流程图","nro":10,"url":"/images/java/hystrixFlowChart.jpeg","index":1,"caption_template":"_CAPTION_","label":"Hystrix 工作流程图","attributes":{},"skip":false,"key":"4.1.1.1"},{"backlink":"java/jvisualvm.html#fig4.1.2.1","level":"4.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":11,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"4.1.2.1"},{"backlink":"java/memory.html#fig4.1.3.1","level":"4.1.3","list_caption":"Figure: JVM内存调整参数","alt":"JVM内存调整参数","nro":12,"url":"/images/java/jvm_gc_algorithms.png","index":1,"caption_template":"_CAPTION_","label":"JVM内存调整参数","attributes":{},"skip":false,"key":"4.1.3.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"ubuntu/dev.md","mtime":"2019-03-13T07:26:00.989Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-03-13T07:27:35.180Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
