@@ -34,6 +34,22 @@ convert +append left.png right.png merged.png
 montage -geometry 100% left.jpg right.jpg merged.jpg
 ```
 
+## exif 元信息
+
+```
+# 查看 exif
+mdls xxx.jpg
+
+# 修改 exif
+brew install exiftool
+
+# 去掉拍摄日期
+exiftool -createdate= -modifydate= a.jpg
+
+exiftool -all a.jpg
+
+
+```
 
 ## 录屏 gif
 ```

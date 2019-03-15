@@ -1,7 +1,18 @@
-## basic
+## dpkg
 
+dpkg is a package manager for Debian-based systems. It can install, remove, and build packages, but unlike other package management systems, it cannot automatically download and install packages or their dependencies. 
 ```
 sudo apt-get install build-essential
+
+# list all packages installed on the system, from a terminal prompt type:
+dpkg -l
+
+# see all the files the package installed onto your system, do this:
+dpkg-query -L <package_name>
+
+# see the files a .deb file will install
+dpkg-deb -c <package_name.deb>
+
 ```
 
 ## GCC 8
@@ -56,3 +67,11 @@ pyenv install 2.7.16
 git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash
 ```
+
+### oom-killer log
+
+- https://stackoverflow.com/questions/9199731/understanding-the-linux-oom-killers-logs
+
+### Server guide
+
+- https://help.ubuntu.com/lts/serverguide/
