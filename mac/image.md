@@ -21,7 +21,7 @@ brew cask install skitch
 ```
 
 
-## 图片合并
+## 图片处理
 
 Mac 版的 PS [ImageMagick](https://www.imagemagick.org)，[常用命令](http://apple.stackexchange.com/a/52882/103966)：
 
@@ -30,8 +30,10 @@ brew install ImageMagick
 
 # 下面两条命令都会把 left.png right.png 合并到 merged.png 里面
 convert +append left.png right.png merged.png
-
 montage -geometry 100% left.jpg right.jpg merged.jpg
+
+# 批量格式转化，把 iOS 拍照默认的 HEIC 格式转为 jpg
+find . -name '*HEIC' -exec echo convert {} {}.jpg \;
 ```
 
 ## exif 元信息

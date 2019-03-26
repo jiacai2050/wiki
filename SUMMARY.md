@@ -22,7 +22,7 @@
     * [数据库 GUI](mac/db_gui.md)
     * [抓包工具](mac/wireshark.md)
     * [浏览器](mac/browser.md)
-    * [图片处理](mac/picture.md)
+    * [图片处理](mac/image.md)
     * [音乐，视频](mac/music_video.md)
     * [Kindle](mac/kindle.md)
     * [压缩软件](mac/compression.md)
