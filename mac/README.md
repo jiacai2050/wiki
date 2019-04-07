@@ -33,6 +33,25 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 - 中科大，https://lug.ustc.edu.cn/wiki/mirrors/help/brew.git
 - 清华，https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/
 
+### 国内生存指南
+
+现在在不使用代理的前提下，raw.githubusercontent.com 根本无法访问，这也就无法安装 brew 命令！为此我在 gitee 做了个备份，并把 BREW_REPO 改为清华备份源！
+
+- https://gitee.com/liujiacai/codes/bcxwortudq653nz4710ji99
+
+这样可以把 brew 下载下来，但是会卡住在 homebrew-core 下载，所以这是 Ctrl-C 终止安装，然后进入执行
+
+```
+cd /usr/local/Homebrew/Library/Taps
+mkdir homebrew
+cd homebrew/
+git clone git://mirrors.ustc.edu.cn/homebrew-core.git
+# 或者使用清华源
+https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git
+```
+这样就把 core 这个模块安装好了，brew 到此能正常工作了。
+cask tap 没有相应国内代理，需要从第三方网站直接下载！
+
 ## Terminal
 
 Terminal 为 macOS 自动的终端仿真器，针对个人习惯，我一般会做如下配置：
