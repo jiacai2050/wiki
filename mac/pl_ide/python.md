@@ -39,18 +39,18 @@ _Qt                _tkinter
 
 running build_scripts
 running install_lib
-
 ```
+
 这是由于 CTL 把一些头文件移动了位置，需要单独额外按照，方式如下：
 
 ```
 sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
-
 ```
+
 - https://github.com/pyenv/pyenv/wiki/Common-build-problems
 - https://developer.apple.com/documentation/xcode_release_notes/xcode_10_release_notes#3035624
-```
 
+```
 # 安装 2.7.8
 pyenv install 2.7.8
 
