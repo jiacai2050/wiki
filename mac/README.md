@@ -15,6 +15,16 @@ MacBook Pro 兼具命令行的高效与图形界面的酷炫，实在是程序�
 > PS: Mac 下有很多非常实用的收费软件，我个人用的并不多，这里就不在列举了。
 大家可以参考知乎上的 [macOS (OS X) 平台上有哪些值得推荐的常用软件？](https://www.zhihu.com/question/19550256)
 
+## 初始设置
+
+- [三指拖动窗口](https://support.apple.com/en-us/HT204609)
+![three finger drag](/images/system-preferences-accessibility-mouse-trackpad-three-finger-drag.png)
+- 菜单栏，时间控件显示日历
+```sh
+brew cask install day-o # 或
+brew cask install Itsycal
+```
+
 
 ## Homebrew 
 
