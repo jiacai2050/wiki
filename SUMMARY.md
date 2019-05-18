@@ -47,13 +47,19 @@
     * [userscript](js/userscript.md)
 
 -----
+* Rust
+    * [rustup](rust/rustup.md)
+
+-----
 * Ubuntu
     * [开发环境准备](ubuntu/dev.md)
     * [apt-get](ubuntu/apt-get.md)
     * [Emacs](ubuntu/emacs.md)
     * [查看进程 ps/top](ubuntu/process.md)
     * [查看socket ss](ubuntu/ss.md)
+    * [科学上网](ubuntu/shadowsocks.md)
     * [sar](ubuntu/sar.md)
+    * [supervisor](ubuntu/supervisor.md)
     * [misc](ubuntu/misc.md)
 
 -----

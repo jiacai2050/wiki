@@ -100,4 +100,7 @@ EXPOSE 2222 2223 2229 22133
 # See: https://github.com/moby/moby/issues/4783
 
 CMD ["sh", "-c", "/usr/bin/java -jar /opt/kestrel/kestrel_2.9.2-$KESTREL_VERSION.jar -f /opt/kestrel/config.scala"]
+# 用 supervisor 启动多个命令
+# CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf", "--nodaemon"]
+
 ```
