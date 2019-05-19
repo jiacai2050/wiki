@@ -2,9 +2,11 @@
 
 set -xe
 
-REMOTE=${1:-oschina}
+REMOTE=${1:-origin}
 
+rm -rf _book
 gitbook build
+rm -rf ../wiki-book/*
 cp -r _book/* ../wiki-book
 cd ../wiki-book
 git add . -A
