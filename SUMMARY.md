@@ -40,7 +40,6 @@
   * [ssh](cmd/ssh.md)
   * [ps/top](cmd/process.md)
   * [ss](cmd/ss.md)
-
   * [shadowsocks](cmd/shadowsocks.md)
   * [sar](cmd/sar.md)
   * [supervisor](cmd/supervisor.md)
