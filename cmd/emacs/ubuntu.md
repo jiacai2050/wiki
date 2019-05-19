@@ -1,6 +1,3 @@
-# Emacs
-
-
 ## 国内下载镜像
 
 - http://mirrors.ustc.edu.cn/gnu/emacs/

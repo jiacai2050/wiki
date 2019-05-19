@@ -1,4 +1,6 @@
-# Java
+# MacOS
+
+## 安装
 
 ```
 brew cask install java
@@ -12,7 +14,7 @@ brew cask install intellij-idea-ce  # IDE，不要告诉我你还在用 eclipse
 export JAVA_HOME="$(/usr/libexec/java_home)"
 ```
 
-# 多版本管理
+## 多版本管理
 
 ```
 brew install jenv

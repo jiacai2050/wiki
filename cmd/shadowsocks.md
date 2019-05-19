@@ -79,3 +79,16 @@ function proxy_on() {
     echo -e "已开启代理"
 }
 ```
+
+## Ubuntu
+
+```sh
+sudo apt-get install shadowsocks-libev privoxy
+
+echo 'forward-socks5 / localhost:1080 .' >> /etc/privoxy/config
+sudo systemctl restart privoxy
+
+# 前台启动
+ss-local -v -c shadowsocks-libev.json
+```
+

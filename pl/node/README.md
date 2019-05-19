@@ -1,4 +1,6 @@
-# Node
+# MacOS
+
+## 安装
 
 推荐使用 [nvm](https://github.com/creationix/nvm) 进行多版本管理
 
@@ -10,7 +12,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR" ]] && source "/usr/local/opt/nvm/nvm.sh"
 ```
 
-## nvm 常用命令
+### nvm 常用命令
 
 ```sh
 # 安装某个版本

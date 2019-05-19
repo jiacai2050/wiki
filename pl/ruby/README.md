@@ -1,4 +1,6 @@
-# Ruby
+# MacOS
+
+## 安装
 
 推荐使用 [rbenv](https://github.com/rbenv/rbenv) 进行多版本管理
 ```
