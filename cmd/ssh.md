@@ -1,3 +1,5 @@
+# 配置
+
 ## ControlMaster
 
 对于 OpenSSH 4.0 以及之后的版本，引入一新功能 ControlMaster，可以复用之前已经登录的连接，建议开启：
@@ -37,3 +39,11 @@ sudo apt-get install keychain
 source $HOME/.keychain/$HOSTNAME-sh
 ```
 - https://www.cyberciti.biz/faq/ubuntu-debian-linux-server-install-keychain-apt-get-command/
+
+# pssh
+
+```sh
+pssh -h hs -A -i -l root "docker ps"
+# 对于执行时间较长对命令，可以用 -t 指定超时秒数，默认 60s
+
+```

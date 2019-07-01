@@ -61,6 +61,7 @@
 * Ubuntu
   * [开发环境准备](ubuntu/dev.md)
   * [apt-get](ubuntu/apt-get.md)
+  * [supervisor](ubuntu/supervisor.md)
   * [misc](ubuntu/misc.md)
 
 -----
