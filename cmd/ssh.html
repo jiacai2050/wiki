@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="process.html" />
+    <link rel="next" href="curl.html" />
     
     
     <link rel="prev" href="wireshark.html" />
@@ -617,7 +617,20 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.7" data-path="process.html">
+        <li class="chapter " data-level="3.1.7" data-path="curl.html">
+            
+                <a href="curl.html">
+            
+                    
+                    curl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.1.8" data-path="process.html">
             
                 <a href="process.html">
             
@@ -630,7 +643,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.8" data-path="ss.html">
+        <li class="chapter " data-level="3.1.9" data-path="ss.html">
             
                 <a href="ss.html">
             
@@ -643,7 +656,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.9" data-path="shadowsocks.html">
+        <li class="chapter " data-level="3.1.10" data-path="shadowsocks.html">
             
                 <a href="shadowsocks.html">
             
@@ -656,7 +669,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.10" data-path="sar.html">
+        <li class="chapter " data-level="3.1.11" data-path="sar.html">
             
                 <a href="sar.html">
             
@@ -669,7 +682,7 @@
             
         </li>
     
-        <li class="chapter " data-level="3.1.11" data-path="supervisor.html">
+        <li class="chapter " data-level="3.1.12" data-path="supervisor.html">
             
                 <a href="supervisor.html">
             
@@ -1186,7 +1199,9 @@
 <li><a href="https://www.linux.com/news/accelerating-openssh-connections-controlmaster" target="_blank">Accelerating OpenSSH connections with ControlMaster</a></li>
 <li><a href="OpenSSH/Cookbook/Multiplexing">https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing</a></li>
 </ul>
-<h2 id="macos">MacOS</h2>
+<p>&#x4E34;&#x65F6;&#x7981;&#x7528;&#x516C;&#x94A5;&#x767B;&#x5F55;&#xFF1A;</p>
+<pre><code>ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com
+</code></pre><h2 id="macos">MacOS</h2>
 <p>&#x5728; macOS/OS X &#x622A;&#x6B62;&#x5230; Yosemite&#xFF0C;ssh-agent &#x4F1A;&#x4E00;&#x76F4;&#x8BB0;&#x4F4F; <code>ssh-add -K</code> &#x6DFB;&#x52A0;&#x7684; key&#xFF0C;&#x5373;&#x4F7F;&#x91CD;&#x542F; keychain&#xFF0C;ssh-agent &#x4E5F;&#x4F1A;&#x81EA;&#x52A8;&#x53BB;&#x8BFB;&#x53D6;&#x4FDD;&#x5B58;&#x5728; keychain &#x4E2D;&#x7684;&#x5BC6;&#x7801;&#xFF08;passphrase&#xFF09;&#x3002;&#x4F46;&#x5728; Sierra &#x4E2D;&#xFF0C;&#x91CD;&#x542F; keychain &#x540E;&#xFF0C;ssh-agent &#x5C31;&#x4E0D;&#x4F1A;&#x53BB;&#x8BFB;&#x53D6;&#x4E86;&#x3002;Apple &#x5F00;&#x53D1;&#x8005;&#x4E5F;&#x5BF9;&#x8FD9;&#x4E00;&#x73B0;&#x8C61;&#x4F5C;&#x51FA;<a href="https://openradar.appspot.com/27348363" target="_blank">&#x56DE;&#x5E94;</a>&#xFF1A;</p>
 <blockquote>
 <p>That&#x2019;s expected. We re-aligned our behavior with the mainstream OpenSSH in this area. </p>
@@ -1245,7 +1260,7 @@ source $HOME/.keychain/$HOSTNAME-sh
                 </a>
                 
                 
-                <a href="process.html" class="navigation navigation-next " aria-label="Next page: ps/top">
+                <a href="curl.html" class="navigation navigation-next " aria-label="Next page: curl">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1256,7 +1271,7 @@ source $HOME/.keychain/$HOSTNAME-sh
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ssh","level":"3.1.6","depth":2,"next":{"title":"ps/top","level":"3.1.7","depth":2,"path":"cmd/process.md","ref":"cmd/process.md","articles":[]},"previous":{"title":"wireshark","level":"3.1.5","depth":2,"path":"cmd/wireshark.md","ref":"cmd/wireshark.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 工欲善其事，必先利其器","alt":"工欲善其事，必先利其器","nro":1,"url":"https://img.alicdn.com/imgextra/i2/581166664/O1CN01J4XYU71z69uJDeXVt_!!581166664.jpg","index":1,"caption_template":"_CAPTION_","label":"工欲善其事，必先利其器","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"index.html#fig1.1.2","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":2,"url":"/images/suo.jpg","index":2,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.2"},{"backlink":"pl/java/hystrix.html#fig2.1.1.1.1","level":"2.1.1.1","list_caption":"Figure: Hystrix 工作流程图","alt":"Hystrix 工作流程图","nro":3,"url":"/images/java/hystrixFlowChart.jpeg","index":1,"caption_template":"_CAPTION_","label":"Hystrix 工作流程图","attributes":{},"skip":false,"key":"2.1.1.1.1"},{"backlink":"pl/java/jvisualvm.html#fig2.1.1.2.1","level":"2.1.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":4,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"2.1.1.2.1"},{"backlink":"pl/java/memory.html#fig2.1.1.3.1","level":"2.1.1.3","list_caption":"Figure: JVM内存调整参数","alt":"JVM内存调整参数","nro":5,"url":"/images/java/jvm_gc_algorithms.png","index":1,"caption_template":"_CAPTION_","label":"JVM内存调整参数","attributes":{},"skip":false,"key":"2.1.1.3.1"},{"backlink":"pl/clojure/re-frame.html#fig2.1.2.2.1","level":"2.1.2.2","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":6,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"2.1.2.2.1"},{"backlink":".html/emacs/mac.md#fig3.1.1.1.1","level":"3.1.1.1","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":7,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"3.1.1.1.1"},{"backlink":".html/emacs/mac.md#fig3.1.1.1.2","level":"3.1.1.1","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":8,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"3.1.1.1.2"},{"backlink":".html/emacs/python.md#fig3.1.1.3.1","level":"3.1.1.3","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":9,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"3.1.1.3.1"},{"backlink":".html/virtualbox.md#fig3.1.3.1","level":"3.1.3","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":10,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"3.1.3.1"},{"backlink":"mac/index.html#fig4.1.1","level":"4.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":11,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"4.1.1"},{"backlink":"mac/image.html#fig4.1.5.1","level":"4.1.5","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":12,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"4.1.5.1"},{"backlink":"mac/faq.html#fig4.1.10.1","level":"4.1.10","list_caption":"Figure: 系统设置--安全与隐私--通用","alt":"系统设置--安全与隐私--通用","nro":13,"url":"/images/mac_sleep_lock.png","index":1,"caption_template":"_CAPTION_","label":"系统设置--安全与隐私--通用","attributes":{},"skip":false,"key":"4.1.10.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"cmd/ssh.md","mtime":"2019-05-24T06:46:10.453Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-01T06:28:11.552Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ssh","level":"3.1.6","depth":2,"next":{"title":"curl","level":"3.1.7","depth":2,"path":"cmd/curl.md","ref":"cmd/curl.md","articles":[]},"previous":{"title":"wireshark","level":"3.1.5","depth":2,"path":"cmd/wireshark.md","ref":"cmd/wireshark.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","image-captions","-livereload","-expandable-chapters-small","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"fontSettings":{"size":1},"image-captions":{"caption":"_CAPTION_","variable_name":"_pictures"},"expandable-chapters":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[{"backlink":"index.html#fig1.1.1","level":"1.1","list_caption":"Figure: 工欲善其事，必先利其器","alt":"工欲善其事，必先利其器","nro":1,"url":"https://img.alicdn.com/imgextra/i2/581166664/O1CN01J4XYU71z69uJDeXVt_!!581166664.jpg","index":1,"caption_template":"_CAPTION_","label":"工欲善其事，必先利其器","attributes":{},"skip":false,"key":"1.1.1"},{"backlink":"index.html#fig1.1.2","level":"1.1","list_caption":"Figure: 一把梭","alt":"一把梭","nro":2,"url":"/images/suo.jpg","index":2,"caption_template":"_CAPTION_","label":"一把梭","attributes":{},"skip":false,"key":"1.1.2"},{"backlink":"pl/java/hystrix.html#fig2.1.1.1.1","level":"2.1.1.1","list_caption":"Figure: Hystrix 工作流程图","alt":"Hystrix 工作流程图","nro":3,"url":"/images/java/hystrixFlowChart.jpeg","index":1,"caption_template":"_CAPTION_","label":"Hystrix 工作流程图","attributes":{},"skip":false,"key":"2.1.1.1.1"},{"backlink":"pl/java/jvisualvm.html#fig2.1.1.2.1","level":"2.1.1.2","list_caption":"Figure: jvisualvm","alt":"jvisualvm","nro":4,"url":"/images/jvisualvm.png","index":1,"caption_template":"_CAPTION_","label":"jvisualvm","attributes":{},"skip":false,"key":"2.1.1.2.1"},{"backlink":"pl/java/memory.html#fig2.1.1.3.1","level":"2.1.1.3","list_caption":"Figure: JVM内存调整参数","alt":"JVM内存调整参数","nro":5,"url":"/images/java/jvm_gc_algorithms.png","index":1,"caption_template":"_CAPTION_","label":"JVM内存调整参数","attributes":{},"skip":false,"key":"2.1.1.3.1"},{"backlink":"pl/clojure/re-frame.html#fig2.1.2.2.1","level":"2.1.2.2","list_caption":"Figure: event-handlers flow","alt":"event-handlers flow","nro":6,"url":"https://github.com/Day8/re-frame/raw/master/images/event-handlers.png?raw=true","index":1,"caption_template":"_CAPTION_","label":"event-handlers flow","attributes":{},"skip":false,"key":"2.1.2.2.1"},{"backlink":".html/emacs/mac.md#fig3.1.1.1.1","level":"3.1.1.1","list_caption":"Figure: iTerm2 键位映射","alt":"iTerm2 键位映射","nro":7,"url":"/images/iterm2_key_mapping.png","index":1,"caption_template":"_CAPTION_","label":"iTerm2 键位映射","attributes":{},"skip":false,"key":"3.1.1.1.1"},{"backlink":".html/emacs/mac.md#fig3.1.1.1.2","level":"3.1.1.1","list_caption":"Figure: 关闭 Mission Control","alt":"关闭 Mission Control","nro":8,"url":"/images/mac_mission_control.png","index":2,"caption_template":"_CAPTION_","label":"关闭 Mission Control","attributes":{},"skip":false,"key":"3.1.1.1.2"},{"backlink":".html/emacs/python.md#fig3.1.1.3.1","level":"3.1.1.3","list_caption":"Figure: Emacs as Python IDE","alt":"Emacs as Python IDE","nro":9,"url":"http://upload-images.jianshu.io/upload_images/45329-6e1952c77aa25743.gif?imageMogr2/auto-orient/strip","index":1,"caption_template":"_CAPTION_","label":"Emacs as Python IDE","attributes":{},"skip":false,"key":"3.1.1.3.1"},{"backlink":".html/virtualbox.md#fig3.1.3.1","level":"3.1.3","list_caption":"Figure: Virtualbox","alt":"Virtualbox","nro":10,"url":"https://img.alicdn.com/imgextra/i4/581166664/TB2aVGdcNlmpuFjSZPfXXc9iXXa_!!581166664.png","index":1,"caption_template":"_CAPTION_","label":"Virtualbox","attributes":{},"skip":false,"key":"3.1.3.1"},{"backlink":"mac/index.html#fig4.1.1","level":"4.1","list_caption":"Figure: MacBook Pro 你值得拥有","alt":"MacBook Pro 你值得拥有","nro":11,"url":"https://dn-mhke0kuv.qbox.me/cb49a18efb421a9624c5.png","index":1,"caption_template":"_CAPTION_","label":"MacBook Pro 你值得拥有","attributes":{},"skip":false,"key":"4.1.1"},{"backlink":"mac/image.html#fig4.1.5.1","level":"4.1.5","list_caption":"Figure: 使用 licecap 制作的例子","alt":"使用 licecap 制作的例子","nro":12,"url":"http://ww3.sinaimg.cn/mw690/5fee18eegw1f17799uiz1g20ci0cijs2.gif","index":1,"caption_template":"_CAPTION_","label":"使用 licecap 制作的例子","attributes":{},"skip":false,"key":"4.1.5.1"},{"backlink":"mac/faq.html#fig4.1.10.1","level":"4.1.10","list_caption":"Figure: 系统设置--安全与隐私--通用","alt":"系统设置--安全与隐私--通用","nro":13,"url":"/images/mac_sleep_lock.png","index":1,"caption_template":"_CAPTION_","label":"系统设置--安全与隐私--通用","attributes":{},"skip":false,"key":"4.1.10.1"}]},"title":"家财的个人 Wiki","links":{"sidebar":{"Blog":"http://liujiacai.net"}},"gitbook":"*"},"file":{"path":"cmd/ssh.md","mtime":"2019-08-20T02:42:01.368Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-01T13:40:14.557Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
