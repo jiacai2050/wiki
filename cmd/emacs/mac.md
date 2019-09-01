@@ -4,6 +4,12 @@
 # 安装命令
 # org-mode 显示 inline image 时需要 imagemagick@6
 # https://emacs.stackexchange.com/questions/30559/org-mode-inline-image-display-size/30560
+
+brew tap d12frosted/emacs-plus
+brew install emacs-plus
+
+# 这是旧方法，brew 已经移除了编译选项，详见：
+# https://www.reddit.com/r/emacs/comments/bhjtf9/now_that_homebrew_has_removed_build_options_how/
 brew install emacs --with-cocoa --with-dbus --with-librsvg --with-imagemagick@6 --with-mailutils
 brew install sbcl # 顺便把 common lisp 也装上
 ```

@@ -38,6 +38,7 @@
     * [Debian](cmd/vagrant/debian.md)
   * [wireshark](cmd/wireshark.md)
   * [ssh](cmd/ssh.md)
+  * [curl](cmd/curl.md)
   * [ps/top](cmd/process.md)
   * [ss](cmd/ss.md)
   * [shadowsocks](cmd/shadowsocks.md)

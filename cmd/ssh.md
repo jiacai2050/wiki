@@ -13,6 +13,12 @@ Host *
 - [Accelerating OpenSSH connections with ControlMaster](https://www.linux.com/news/accelerating-openssh-connections-controlmaster)
 - [https://en.wikibooks.org/wiki/OpenSSH/Cookbook/Multiplexing](OpenSSH/Cookbook/Multiplexing)
 
+临时禁用公钥登录：
+
+```
+ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no example.com
+```
+
 ## MacOS
 
 在 macOS/OS X 截止到 Yosemite，ssh-agent 会一直记住 `ssh-add -K` 添加的 key，即使重启 keychain，ssh-agent 也会自动去读取保存在 keychain 中的密码（passphrase）。但在 Sierra 中，重启 keychain 后，ssh-agent 就不会去读取了。Apple 开发者也对这一现象作出[回应](https://openradar.appspot.com/27348363)：
