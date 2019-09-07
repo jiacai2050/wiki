@@ -1,3 +1,24 @@
+# 查看网速
+
+```
+ethtool eth0 | grep -i Speed
+        Speed: 1000Mb/s
+        
+apt install sysstat
+sar -n DEV  1
+
+11:48:54        IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s
+11:48:54         eth0     17.07     12.20      1.23      1.86      0.00      0.00      0.00
+11:48:54           lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+
+Average:        IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s
+Average:         eth0     20.91     22.80      3.67     18.55      0.00      0.00      0.00
+Average:           lo      1.49      1.49      0.39      0.39      0.00      0.00      0.00
+
+```
+
+
+![Linux Performance Observability: sar](img/screenshot_2019-09-07_11-54-39.jpg)
 # ss
 
 > Another utility to investigate sockets
