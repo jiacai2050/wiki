@@ -44,3 +44,10 @@ du -sh some-directory
 检查的是这个目录的物理大小，一个 1K 的文件，会因 文件碎片/sector/block size 等因素，在磁盘上占用的空间一般都要大于 1K。
 
 - https://superuser.com/questions/382120/mac-os-x-not-reporting-directory-sizes-correctly
+
+## pkg 文件
+
+```bash
+pkgutil --expand mystubbornpackage.pkg path/to/expand
+```
+- https://apple.stackexchange.com/a/15665/103966

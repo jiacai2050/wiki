@@ -3,6 +3,10 @@
 * [Introduction](README.md)
 
 -----
+* 日常使用
+  * [百度网盘](daily/pan.md)
+
+-----
 * 编程语言
   * [Java](pl/java/README.md)
     * [Hystrix](pl/java/hystrix.md)
