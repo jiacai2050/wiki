@@ -2,7 +2,10 @@ Mac 上自带的 Safari 比较轻量，虽然比较省电，但扩展性远不�
 ```
 brew cask install firefox
 brew cask install google-chrome
+# 现在的 Edge 完全兼容 Chrome，并且不用翻墙
+brew cask install microsoft-edge
 ```
+
 Chrome 默认会安装一个 Update 程序，在 `~/Library/Google/GoogleSoftwareUpdate`，可以执行[下面命令删除](https://superuser.com/a/1077420)：
 ```
 cd /Users/liujiacai/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bundle/Contents/Resources/GoogleSoftwareUpdateAgent.app/Contents/Resources
@@ -15,16 +18,25 @@ cd /Users/liujiacai/Library/Google/GoogleSoftwareUpdate/GoogleSoftwareUpdate.bun
 brew cask install chromium
 brew cask install google-chrome-canary    # 金丝雀版
 brew cask install firefoxdeveloperedition
+
 ```
 
 ## 必备插件
 
-- [Violentmonkey](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=en-US)
-  1. https://greasyfork.org/en/scripts/14182-v2excellent-js
+- [Violentmonkey](https://violentmonkey.github.io/) 里面的脚本通过 OneNote 同步
+  - [Chrome Web Store](https://chrome.google.com/webstore/detail/violentmonkey/jinjaccalgkegednnccohejagnlnfdag?hl=en-US)
+  - [Firefox AMO](https://addons.mozilla.org/firefox/addon/violentmonkey/)
+- [Dark Reader](https://github.com/darkreader/darkreader)
+  - [Chrome Web Store](https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh)
+  - [Firefox AMO](https://addons.mozilla.org/en-US/firefox/addon/darkreader/)
+- [SwitchyOmega](https://github.com/FelisCatus/SwitchyOmega)
+  - [Chrome Web Store](https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif)
+  - [Firefox AMO](https://addons.mozilla.org/en-US/firefox/addon/switchyomega/)
 - [Clearly](https://chrome.google.com/webstore/detail/clearly/odfonlkabodgbolnmmkdijkaeggofoop?hl=en)
 - [仿生学阅读 BionicReading](https://chrome.google.com/webstore/detail/bionicreading/kdfkejelgkdjgfoolngegkhkiecmlflj/related?hl=de)
 - [JSON Formatter](https://chrome.google.com/webstore/detail/json-formatter/bcjindcccaagfpapjjmafapmmgkkhgoa?hl=en)
 - [uBlock Origin](https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en)
+
 
 ## userscript
 
