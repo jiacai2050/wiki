@@ -33,7 +33,7 @@ sudo rm -rf /usr/share/emacs
 
 还有一点需要注意，Mac 自身有一些快捷键可能与 Emacs 冲突，主要是 Mission Control，我直接取消掉了。
 
-![关闭 Mission Control](/images/mac_mission_control.png)
+![关闭 Mission Control](/images/mac/mission_control.png)
 
 如果上述方案无法解决你的问题，Google `emacs + input-decode-map` 关键字即可。[Emacs China](https://emacs-china.org/) 也是一个好地方， 由于 Emacs 的使用门槛，决定了其社区的高质量，[我的提问](https://emacs-china.org/t/topic/4829/2)很快就得到了准确的解答。
 

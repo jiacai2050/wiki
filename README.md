@@ -9,3 +9,17 @@
 ![一把梭](/images/suo.jpg)
 
 编程有时确实很无聊，各种环境搭建，OMG，干活去吧...
+
+## Install
+
+```bash
+git clone git@github.com:jiacai2050/wiki.git
+git clone git@github.com:jiacai2050/wiki.git wiki-book
+cd wiki-book
+git checkout gh-pages
+
+npm i -g gitbook-cli
+gitbook install
+
+gitbook serve
+```

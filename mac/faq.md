@@ -13,7 +13,7 @@ sudo killall -HUP mDNSResponder
 
 如果希望 sleep 再次唤醒时需要输入密码，可以修改一处设置：
 
-![系统设置--安全与隐私--通用](/images/mac_sleep_lock.png)
+![系统设置--安全与隐私--通用](/images/mac/sleep_lock.png)
 
 ## 修改 maxfiles
 
@@ -38,7 +38,7 @@ Mac 生于乔帮主之手时，为了凸显尊贵，接口与一般的电脑有�
 ## du 磁盘大小
 
 ```
-du -sh some-directory 
+du -sh some-directory
 ```
 
 检查的是这个目录的物理大小，一个 1K 的文件，会因 文件碎片/sector/block size 等因素，在磁盘上占用的空间一般都要大于 1K。
